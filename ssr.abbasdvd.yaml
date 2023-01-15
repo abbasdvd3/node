@@ -3070,8 +3070,8 @@ proxy-groups:
   - name: ♻️ test
     type: url-test
     url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    interval: 200
+    tolerance: 10
     proxies:
       - '1_1'
       - '1_2'
