@@ -93,8 +93,8 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://cp.cloudflare.com/generate_204
-  interval: '400'
-  tolerance: '150'
+  interval: '600'
+  tolerance: '100'
 - name: OPSI•ADS
   type: select
   disable-udp: false
