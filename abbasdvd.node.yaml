@@ -37,7 +37,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 10
+      interval: 100
   "\U0001F4F6VPN2\U0001F4F6":
     type: http
     target: 'proxy'
@@ -46,7 +46,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 10
+      interval: 100
   "\U0001F4F6VPN3\U0001F4F6":
     type: http
     target: 'proxy'
@@ -55,7 +55,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 10
+      interval: 100
   "\U0001F4F6VPN4\U0001F4F6":
     type: http
     target: 'proxy'
@@ -64,7 +64,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 10
+      interval: 100
 proxy-groups:
 - name: "\U0001F4F6test1\U0001F4F6"
   type: url-test
@@ -81,7 +81,7 @@ proxy-groups:
   use:
   - "\U0001F4F6VPN4\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '450'
+  interval: '500'
   tolerance: '150'
 - name: "♻️LOADBALANCE♻️"
   type: load-balance
@@ -91,7 +91,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '300'
+  interval: '500'
 - name: "\U0001F6A5PING\U0001F6A5"
   type: url-test
   disable-udp: false
@@ -116,9 +116,6 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
 rules:
-- DOMAIN-SUFFIX,googlesyndication.com,STREAMING
-- AND,((DST-PORT,5228-5230),(NETWORK,TCP)),DIRECT
-- GEOSITE,CATEGORY-ADS-ALL,REJECT
 - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
 - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
 - MATCH,STREAMING
