@@ -84,7 +84,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '600'
+  interval: '400'
 - name: "\U0001F6A5PING\U0001F6A5"
   type: url-test
   disable-udp: false
@@ -92,7 +92,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://cp.cloudflare.com/generate_204
-  interval: '600'
+  interval: '400'
   tolerance: '100'
 - name: OPSI•ADS
   type: select
