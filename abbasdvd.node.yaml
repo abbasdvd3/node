@@ -14,20 +14,7 @@ dns:
     - 8.8.4.4
     - tls://1.0.0.1:853
     - tls://dns.google:853
-proxies:
-rule-providers:
-   BlockAds:
-    type: http
-    behavior: classical
-    path: "./rule_provider/BlockAds.yaml"
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
-    interval: 86400
-   reject:
-    type: http
-    behavior: domain
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
-    path: "./rule_provider/reject.yaml"
-    interval: 86400 
+proxies: 
 proxy-providers:
   "\U0001F4F6VPN1\U0001F4F6":
     type: http
@@ -36,8 +23,8 @@ proxy-providers:
     path: "./proxy_provider/VPN1.yaml"
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
-      interval: 100
+      url: http://www.gstatic.com/generate_204
+      interval: 500
   "\U0001F4F6VPN2\U0001F4F6":
     type: http
     target: 'proxy'
@@ -45,8 +32,8 @@ proxy-providers:
     path: "./proxy_provider/VPN2.yaml"
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
-      interval: 100
+      url: http://www.gstatic.com/generate_204
+      interval: 500
   "\U0001F4F6VPN3\U0001F4F6":
     type: http
     target: 'proxy'
@@ -54,8 +41,8 @@ proxy-providers:
     path: "./proxy_provider/VPN3.yaml"
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
-      interval: 100
+      url: http://www.gstatic.com/generate_204
+      interval: 500
   "\U0001F4F6VPN4\U0001F4F6":
     type: http
     target: 'proxy'
@@ -63,8 +50,8 @@ proxy-providers:
     path: "./proxy_provider/VPN4.yaml"
     health-check:
       enable: true
-      url: http://cp.cloudflare.com/generate_204
-      interval: 100
+      url: http://www.gstatic.com/generate_204
+      interval: 500
 proxy-groups:
 - name: "\U0001F4F6test1\U0001F4F6"
   type: url-test
@@ -91,16 +78,16 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '500'
+  interval: '700'
 - name: "\U0001F6A5PING\U0001F6A5"
   type: url-test
   disable-udp: false
   proxies:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
-  url: http://cp.cloudflare.com/generate_204
-  interval: '200'
-  tolerance: '50'
+  url: http://www.gstatic.com/generate_204
+  interval: '500'
+  tolerance: '150'
 - name: OPSI•ADS
   type: select
   disable-udp: false
@@ -118,4 +105,4 @@ proxy-groups:
 rules:
 - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
 - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
-- MATCH,STREAMING
+- MATCH,♻️LOADBALANCE♻️
