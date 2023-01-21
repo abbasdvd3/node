@@ -1,78 +1,11 @@
-tproxy-port: 9898
-mixed-port: 7890
+port: 7890
+socks-port: 7891
 mode: rule
 allow-lan: true
 unified-delay: false
-auto-redir: true
-bind-address: '*'
 log-level: silent
 ipv6: true
-geodata-mode: true
 external-controller: 0.0.0.0:9090
-external-ui: dashboard/dist
-tcp-concurrent: false
-interface-name: ""
-enable-process: true
-geodata-loader: memconservative
-inbound-tfo: true
-secret: ""
-# geox-url: {mmdb: "https://cdn.jsdelivr.net/gh/Dreamacro/maxmind-geoip@release/Country.mmdb",geoip: "https://github.com/v2fly/geoip/releases/latest/download/geoip-only-cn-private.dat",geosite: "https://github.com/taamarin/v2ray-rules-dat/raw/release/GeoSite.dat"}
-profile:
-  store-selected: true
-  store-fake-ip: true
-experimental: {
-    sniff-tls-sni: false,
-    fingerprint: ""
-}
-sniffer:
-  enable: true
-  sniffing:
-    - tls
-    - http
-  force-domain:
-    - '+'
-  skip-domain: 
-    - '+.google.com'
-  port-whitelist:
-    - 443
-    - 80
-hosts: {
-  "cacerts.digicert.com": "104.21.21.147",
-  "ota.googlezip.net": "127.0.0.1",
-  "ota-cache1.googlezip.net": "127.0.0.1",
-  "ota-cache2.googlezip.net": "127.0.0.1"
-}
-tun:
-  enable: true
-  device: Meta
-  stack: system
-  dns-hijack:
-    - any:53
-  auto-route: false
-  auto-detect-interface: false
-dns:
-  enable: true
-  ipv6: true
-  prefer-h3: false
-  default-nameserver:
-    - 8.8.8.8
-  listen: 0.0.0.0:1053
-  use-hosts: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
-  fake-ip-filter: [
-    "*.local",
-    "*.localhost",
-  ]
-  nameserver:
-    - 1.1.1.1
-  fallback: []
-  fallback-filter:
-    geoip: false
-    geoip-code: "!ID"
-    geosite: [GFW]
-    ipcidr: []
-    domain: ['+.google.com','+.facebook.com','+.youtube.com']
 
 proxies:
 rule-providers:
