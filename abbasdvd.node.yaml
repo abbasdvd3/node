@@ -37,7 +37,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
+      interval: 10
   "\U0001F4F6VPN2\U0001F4F6":
     type: http
     target: 'proxy'
@@ -46,7 +46,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
+      interval: 10
   "\U0001F4F6VPN3\U0001F4F6":
     type: http
     target: 'proxy'
@@ -55,7 +55,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
+      interval: 10
   "\U0001F4F6VPN4\U0001F4F6":
     type: http
     target: 'proxy'
@@ -64,7 +64,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
+      interval: 10
 proxy-groups:
 - name: "\U0001F4F6test1\U0001F4F6"
   type: url-test
@@ -73,7 +73,7 @@ proxy-groups:
   - "\U0001F4F6VPN1\U0001F4F6"
   - "\U0001F4F6VPN2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '350'
+  interval: '500'
   tolerance: '150'
 - name: "\U0001F4F6test2\U0001F4F6"
   type: url-test
@@ -81,7 +81,7 @@ proxy-groups:
   use:
   - "\U0001F4F6VPN4\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '350'
+  interval: '450'
   tolerance: '150'
 - name: "♻️LOADBALANCE♻️"
   type: load-balance
@@ -91,7 +91,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '400'
+  interval: '300'
 - name: "\U0001F6A5PING\U0001F6A5"
   type: url-test
   disable-udp: false
@@ -99,8 +99,8 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://cp.cloudflare.com/generate_204
-  interval: '400'
-  tolerance: '100'
+  interval: '200'
+  tolerance: '50'
 - name: OPSI•ADS
   type: select
   disable-udp: false
