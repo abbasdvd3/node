@@ -64,18 +64,18 @@ proxy-groups:
   disable-udp: false
   use:
   - "\U0001F4F6VPN1\U0001F4F6"
-  - "\U0001F4F6VPN3\U0001F4F6"
+  - "\U0001F4F6VPN2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '500'
+  interval: '350'
   tolerance: '150'
 - name: "\U0001F4F6test2\U0001F4F6"
   type: url-test
   disable-udp: false
   use:
-  - "\U0001F4F6VPN2\U0001F4F6"
+  - "\U0001F4F6VPN3\U0001F4F6"
   - "\U0001F4F6VPN4\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '500'
+  interval: '350'
   tolerance: '150'
 - name: "♻️LOADBALANCE♻️"
   type: load-balance
@@ -85,7 +85,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '500'
+  interval: '600'
 - name: "\U0001F6A5PING\U0001F6A5"
   type: url-test
   disable-udp: false
@@ -93,7 +93,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://cp.cloudflare.com/generate_204
-  interval: '500'
+  interval: '400'
   tolerance: '150'
 - name: OPSI•ADS
   type: select
