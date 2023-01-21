@@ -1,11 +1,19 @@
-mode: rule
+mixed-port: 7890
 allow-lan: true
-unified-delay: false
-log-level: silent
-ipv6: true
+mode: Rule
+log-level: info
+unified-delay: true
 external-controller: 0.0.0.0:9090
-enable-process: true
-
+dns:
+  enabled: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
 proxies:
 rule-providers:
    BlockAds:
@@ -71,7 +79,6 @@ proxy-groups:
   type: url-test
   disable-udp: false
   use:
-  - "\U0001F4F6VPN3\U0001F4F6"
   - "\U0001F4F6VPN4\U0001F4F6"
   url: http://www.gstatic.com/generate_204
   interval: '350'
