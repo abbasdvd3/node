@@ -9,7 +9,7 @@ enable-process: true
 profile:
   store-selected: false
   store-fake-ip: true
-experimental: {
+experimental: 
     sniff-tls-sni: true,
     fingerprint: ""
 
