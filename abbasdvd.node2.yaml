@@ -1,11 +1,8 @@
-port: 7890
-socks-port: 7891
-redir-port: 7892
 tproxy-port: 9898
 mixed-port: 7890
 mode: rule
 allow-lan: true
-unified-delay: true
+unified-delay: false
 auto-redir: true
 bind-address: '*'
 log-level: silent
@@ -13,7 +10,7 @@ ipv6: true
 geodata-mode: true
 external-controller: 0.0.0.0:9090
 external-ui: dashboard/dist
-tcp-concurrent: true
+tcp-concurrent: false
 interface-name: ""
 enable-process: true
 geodata-loader: memconservative
@@ -46,7 +43,7 @@ hosts: {
   "ota-cache2.googlezip.net": "127.0.0.1"
 }
 tun:
-  enable: false
+  enable: true
   device: Meta
   stack: system
   dns-hijack:
@@ -99,7 +96,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 700
+      interval: 500
   "\U0001F4F6VPN2\U0001F4F6":
     type: http
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN2.yaml
@@ -107,7 +104,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 700
+      interval: 500
   "\U0001F4F6VPN3\U0001F4F6":
     type: file
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN3.yaml
@@ -115,7 +112,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 700
+      interval: 500
   "\U0001F4F6VPN4\U0001F4F6":
     type: file
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN4.yaml
@@ -123,7 +120,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 700
+      interval: 500
 proxy-groups:
 - name: "\U0001F4F6test1\U0001F4F6"
   type: url-test
@@ -151,7 +148,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '500'
+  interval: '300'
 - name: "\U0001F6A5PING\U0001F6A5"
   type: url-test
   disable-udp: false
