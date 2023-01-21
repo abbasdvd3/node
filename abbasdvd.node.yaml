@@ -6,31 +6,6 @@ log-level: silent
 ipv6: true
 external-controller: 0.0.0.0:9090
 enable-process: true
-profile:
-  store-selected: false
-  store-fake-ip: true
-experimental: 
-    sniff-tls-sni: true,
-    fingerprint: ""
-
-tun:
-  enable: true
-  device: Meta
-  stack: system
-  dns-hijack:
-    - any:53
-  auto-route: false
-  auto-detect-interface: false
-dns:
-  enable: true
-  ipv6: true
-  prefer-h3: false
-  default-nameserver:
-    - 8.8.8.8
-  listen: 0.0.0.0:1053
-  use-hosts: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
 
 proxies:
 rule-providers:
