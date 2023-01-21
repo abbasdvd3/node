@@ -1,0 +1,183 @@
+tproxy-port: 9898
+mixed-port: 7890
+mode: rule
+allow-lan: true
+unified-delay: true
+bind-address: '*'
+log-level: silent
+ipv6: true
+geodata-mode: true
+external-controller: 0.0.0.0:9090
+external-ui: dashboard/dist
+tcp-concurrent: true
+interface-name: ""
+enable-process: true
+geodata-loader: memconservative
+inbound-tfo: true
+secret: ""
+# geox-url: {mmdb: "https://cdn.jsdelivr.net/gh/Dreamacro/maxmind-geoip@release/Country.mmdb",geoip: "https://github.com/v2fly/geoip/releases/latest/download/geoip-only-cn-private.dat",geosite: "https://github.com/taamarin/v2ray-rules-dat/raw/release/GeoSite.dat"}
+profile:
+  store-selected: true
+  store-fake-ip: true
+experimental: {
+    sniff-tls-sni: false,
+    fingerprint: ""
+}
+sniffer:
+  enable: true
+  sniffing:
+    - tls
+    - http
+  force-domain:
+    - '+'
+  skip-domain: 
+    - '+.google.com'
+  port-whitelist:
+    - 443
+    - 80
+hosts: {
+  "cacerts.digicert.com": "104.21.21.147",
+  "ota.googlezip.net": "127.0.0.1",
+  "ota-cache1.googlezip.net": "127.0.0.1",
+  "ota-cache2.googlezip.net": "127.0.0.1"
+}
+tun:
+  enable: false
+  device: Meta
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: false
+  auto-detect-interface: false
+dns:
+  enable: true
+  ipv6: true
+  prefer-h3: false
+  default-nameserver:
+    - 8.8.8.8
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter: [
+    "*.local",
+    "*.localhost",
+  ]
+  nameserver:
+    - 1.1.1.1
+  fallback: []
+  fallback-filter:
+    geoip: false
+    geoip-code: "!ID"
+    geosite: [GFW]
+    ipcidr: []
+    domain: ['+.google.com','+.facebook.com','+.youtube.com']
+
+proxies:
+rule-providers:
+   BlockAds:
+    type: http
+    behavior: classical
+    path: "./rule_provider/BlockAds.yaml"
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
+    interval: 86400
+   reject:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+    path: "./rule_provider/reject.yaml"
+    interval: 86400 
+proxy-providers:
+  "\U0001F4F6VPN1\U0001F4F6":
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN1.yaml
+    path: "./proxy_provider/VPN1.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 1000
+  "\U0001F4F6VPN2\U0001F4F6":
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN2.yaml
+    path: "./proxy_provider/VPN2.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 1000
+  "\U0001F4F6VPN3\U0001F4F6":
+    type: file
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN3.yaml
+    path: "./proxy_provider/VPN3.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 1000
+  "\U0001F4F6VPN4\U0001F4F6":
+    type: file
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN4.yaml
+    path: "./proxy_provider/VPN4.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 1000
+proxy-groups:
+- name: "\U0001F4F6test1\U0001F4F6"
+  type: url-test
+  disable-udp: false
+  use:
+  - "\U0001F4F6VPN1\U0001F4F6"
+  - "\U0001F4F6VPN3\U0001F4F6"
+  url: http://www.gstatic.com/generate_204
+  interval: '500'
+  tolerance: '150'
+- name: "\U0001F4F6test2\U0001F4F6"
+  type: url-test
+  disable-udp: false
+  use:
+  - "\U0001F4F6VPN2\U0001F4F6"
+  - "\U0001F4F6VPN4\U0001F4F6"
+  url: http://www.gstatic.com/generate_204
+  interval: '500'
+  tolerance: '150'
+- name: "♻️LOADBALANCE♻️"
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - "\U0001F4F6test1\U0001F4F6"
+  - "\U0001F4F6test2\U0001F4F6"
+  url: http://www.gstatic.com/generate_204
+  interval: '500'
+- name: "\U0001F6A5PING\U0001F6A5"
+  type: url-test
+  disable-udp: false
+  proxies:
+  - "\U0001F4F6test1\U0001F4F6"
+  - "\U0001F4F6test2\U0001F4F6"
+  url: http://cp.cloudflare.com/generate_204
+  interval: '500'
+  tolerance: '150'
+- name: OPSI•ADS
+  type: select
+  disable-udp: false
+  proxies:
+  - REJECT
+  - "\U0001F4F6test1\U0001F4F6"
+  - "\U0001F4F6test2\U0001F4F6"
+- name: STREAMING
+  type: select
+  disable-udp: false
+  proxies:
+  - "♻️LOADBALANCE♻️"
+  - "\U0001F4F6test1\U0001F4F6"
+  - "\U0001F4F6test2\U0001F4F6"
+shortcuts:
+  TCPgames: network == 'tcp' and dst_port not in [21, 22, 23, 53, 80, 123, 143, 194,
+    443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222,
+    5228, 5229, 5230, 8080, 8443, 8880, 8883, 8888, 8889]
+  UDPgames: network == 'udp' and dst_port not in [21, 22, 23, 53, 80, 123, 143, 194,
+    443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222,
+    5228, 5229, 5230, 8080, 8443, 8880, 8883, 8888, 8889]
+  Speedtest: network == "tcp" and match_provider("rule_Speedtest")
+rules:
+- MATCH,STREAMING
