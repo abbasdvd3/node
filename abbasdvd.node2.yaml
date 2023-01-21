@@ -99,7 +99,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 1000
+      interval: 700
   "\U0001F4F6VPN2\U0001F4F6":
     type: http
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN2.yaml
@@ -107,7 +107,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 1000
+      interval: 700
   "\U0001F4F6VPN3\U0001F4F6":
     type: file
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN3.yaml
@@ -115,7 +115,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 1000
+      interval: 700
   "\U0001F4F6VPN4\U0001F4F6":
     type: file
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN4.yaml
@@ -123,7 +123,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 1000
+      interval: 700
 proxy-groups:
 - name: "\U0001F4F6test1\U0001F4F6"
   type: url-test
