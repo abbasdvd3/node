@@ -4,15 +4,27 @@ mode: Rule
 log-level: info
 external-controller: 0.0.0.0:9090
 dns:
-  enabled: true
-  nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-  fallback:
+  enable: true
+  ipv6: true # false akan mengembalikan hasil kosong untuk AAAA
+  prefer-h3: false
+  default-nameserver:
     - 8.8.8.8
-    - 8.8.4.4
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
+  listen: 0.0.0.0:1053
+  use-hosts: true
+  # redir-host / fake-ip
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '+.lan'
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - '+.stun.*.*.*.*'
+    - '+.stun.*.*.*.*.*'
+  proxy-server-nameserver:
+    - '1.0.0.1'
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
 proxies: 
 proxy-providers:
   "\U0001F4F6VPN1\U0001F4F6":
