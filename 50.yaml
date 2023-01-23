@@ -649,7 +649,7 @@ proxies:
     servername: ""
     udp: true
 proxy-groups:
-  - name: 50
+  - name: tt
     type: select
     proxies:
       - 1_1
@@ -702,4 +702,4 @@ proxy-groups:
       - 1_49
       - 1_50
 rules:
-  - MATCH,50
+  - MATCH,tt
