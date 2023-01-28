@@ -13,11 +13,9 @@ bind-address: "*"
 unified-delay: true
 profile:
   store-selected: true
-  store-fake-ip: true
 dns:
   enable: true
   ipv6: false
-  use-host: true
   enhanced-mode: redir-host
   listen: 0.0.0.0:7874
   nameserver:
@@ -33,100 +31,6 @@ dns:
     - 8.8.8.8
     - 1.1.1.1
     - 112.215.203.254
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - "*.lan"
-    - "*.localdomain"
-    - "*.example"
-    - "*.invalid"
-    - "*.localhost"
-    - "*.test"
-    - "*.local"
-    - "*.home.arpa"
-    - time.*.com
-    - time.*.gov
-    - time.*.edu.cn
-    - time.*.apple.com
-    - time1.*.com
-    - time2.*.com
-    - time3.*.com
-    - time4.*.com
-    - time5.*.com
-    - time6.*.com
-    - time7.*.com
-    - ntp.*.com
-    - ntp1.*.com
-    - ntp2.*.com
-    - ntp3.*.com
-    - ntp4.*.com
-    - ntp5.*.com
-    - ntp6.*.com
-    - ntp7.*.com
-    - "*.time.edu.cn"
-    - "*.ntp.org.cn"
-    - +.pool.ntp.org
-    - time1.cloud.tencent.com
-    - music.163.com
-    - "*.music.163.com"
-    - "*.126.net"
-    - musicapi.taihe.com
-    - music.taihe.com
-    - songsearch.kugou.com
-    - trackercdn.kugou.com
-    - "*.kuwo.cn"
-    - api-jooxtt.sanook.com
-    - api.joox.com
-    - joox.com
-    - y.qq.com
-    - "*.y.qq.com"
-    - streamoc.music.tc.qq.com
-    - mobileoc.music.tc.qq.com
-    - isure.stream.qqmusic.qq.com
-    - dl.stream.qqmusic.qq.com
-    - aqqmusic.tc.qq.com
-    - amobile.music.tc.qq.com
-    - "*.xiami.com"
-    - "*.music.migu.cn"
-    - music.migu.cn
-    - "*.msftconnecttest.com"
-    - "*.msftncsi.com"
-    - msftconnecttest.com
-    - msftncsi.com
-    - localhost.ptlogin2.qq.com
-    - localhost.sec.qq.com
-    - +.srv.nintendo.net
-    - +.stun.playstation.net
-    - xbox.*.microsoft.com
-    - xnotify.xboxlive.com
-    - +.battlenet.com.cn
-    - +.wotgame.cn
-    - +.wggames.cn
-    - +.wowsgame.cn
-    - +.wargaming.net
-    - proxy.golang.org
-    - stun.*.*
-    - stun.*.*.*
-    - +.stun.*.*
-    - +.stun.*.*.*
-    - +.stun.*.*.*.*
-    - heartbeat.belkin.com
-    - "*.linksys.com"
-    - "*.linksyssmartwifi.com"
-    - "*.router.asus.com"
-    - mesu.apple.com
-    - swscan.apple.com
-    - swquery.apple.com
-    - swdownload.apple.com
-    - swcdn.apple.com
-    - swdist.apple.com
-    - lens.l.google.com
-    - stun.l.google.com
-    - +.nflxvideo.net
-    - "*.square-enix.com"
-    - "*.finalfantasyxiv.com"
-    - "*.ffxiv.com"
-    - "*.mcdn.bilivideo.cn"
-    - +.media.dssott.com
 proxies:
   - name: 1_1
     server: 38.91.107.72
@@ -1335,6 +1239,1343 @@ proxies:
     cipher: aes-256-cfb
     password: y9VURyNzJWNRYEGQ
     udp: true
+  - name: 1.28_1
+    server: 141.193.213.20
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: 1.28_2
+    server: 203.30.188.188
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_3
+    server: 39.103.165.178
+    port: 50002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_4
+    server: 172.99.188.99
+    port: 3389
+    type: ss
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: 1.28_5
+    server: 185.162.228.229
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: 1.28_6
+    server: v10a.toddns.tk
+    port: 80
+    type: vmess
+    uuid: a25881f3-967f-3265-bc7f-9e66857b016b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: v10a.toddns.tk
+    network: ws
+    ws-opts:
+      path: /fr-unlimitxxx
+      headers:
+        Host: v10a.toddns.tk
+    udp: true
+  - name: 1.28_7
+    server: 172.67.201.14
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: 1.28_8
+    server: 104.149.155.13
+    port: 443
+    type: trojan
+    password: 17c412d9-f283-483c-b095-72605fb2840e
+    skip-cert-verify: true
+    sni: vzwzasc.cn
+    udp: true
+  - name: 1.28_9
+    server: 13.40.153.45
+    port: 11111
+    type: vmess
+    uuid: 7cb72883-9635-46eb-8531-8d697927ff04
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_10
+    server: 172.67.205.70
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg-gcore.sharecentre.online
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: sg-gcore.sharecentre.online
+    udp: true
+  - name: 1.28_11
+    server: 172.64.153.150
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: 1.28_12
+    server: 111.45.22.239
+    port: 50002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_13
+    server: 203.24.108.8
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_14
+    server: 203.24.108.9
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: 1.28_15
+    server: 162.159.128.100
+    port: 2082
+    type: vmess
+    uuid: 80837af3-1ed8-4686-fa8a-6bf9214d5351
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: UK.CLOUDFLARE.QUEST
+    network: ws
+    ws-opts:
+      path: /aries
+      headers:
+        Host: UK.CLOUDFLARE.QUEST
+    udp: true
+  - name: 1.28_16
+    server: 185.143.220.25
+    port: 443
+    type: vmess
+    uuid: f28e354e-c2d1-4983-9b07-5acaf1b3b3e5
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: dengxin.one
+    network: ws
+    ws-opts:
+      path: /6e9EtZ2dL
+      headers:
+        Host: dengxin.one
+    udp: true
+  - name: 1.28_17
+    server: 124.222.189.225
+    port: 80
+    type: vmess
+    uuid: a8c9ad5b-1f58-4234-b5fe-a895bee9a047
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_18
+    server: 47.104.237.32
+    port: 50002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_19
+    server: 198.41.212.150
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: 1.28_20
+    server: 141.193.213.10
+    port: 443
+    type: vmess
+    uuid: 2b214122-1906-428a-bbb7-a039cbb7cd5c
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: fr1.trump2023.org
+    network: ws
+    ws-opts:
+      path: /9JZFDTKE
+      headers:
+        Host: fr1.trump2023.org
+    udp: true
+  - name: 1.28_21
+    server: 193.203.203.53
+    port: 28364
+    type: vmess
+    uuid: c14b9faa-b2ff-4f2b-80c5-499bbdb9b886
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: 1.28_22
+    server: 172.67.164.123
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: 1.28_23
+    server: us2.sanfen001.pics
+    port: 443
+    type: vmess
+    uuid: ba84b2f4-93b5-406c-a01e-e8e67cf7bf25
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us1.sanfen001.pics
+    network: ws
+    ws-opts:
+      path: /zh-cn
+      headers:
+        Host: us1.sanfen001.pics
+    udp: true
+  - name: 1.28_24
+    server: 203.30.190.190
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_25
+    server: 172.99.188.99
+    port: 5003
+    type: ss
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: 1.28_26
+    server: 190.93.245.3
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: 1.28_27
+    server: get.tech
+    port: 80
+    type: vmess
+    uuid: 8763e625-929a-43da-b7bf-7e7bc2e57615
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: lv.awsbest.com
+    network: ws
+    ws-opts:
+      path: /shared
+      headers:
+        Host: lv.awsbest.com
+    udp: true
+  - name: 1.28_28
+    server: 8cdba5d8-7555-8c18-9808-2e907c1c5177.interface.buzz
+    port: 21565
+    type: ss
+    cipher: aes-256-gcm
+    password: 2f2a534d-5685-4319-bdaf-e2ee57f2c8a1
+    udp: true
+  - name: 1.28_29
+    server: 103.45.78.195
+    port: 10001
+    type: vmess
+    uuid: cb7001c7-e495-41ac-b942-f25f60523414
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_30
+    server: 104.29.64.36
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: 1.28_31
+    server: 14.29.124.168
+    port: 25272
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: 1.28_32
+    server: 203.30.189.190
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: 1.28_33
+    server: uicdn.cf
+    port: 80
+    type: vmess
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg3-v2ray.sshkit.org
+    network: ws
+    ws-opts:
+      path: /sshkit/1736960111/63b1af7a5f43f/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+    udp: true
+  - name: 1.28_34
+    server: trxjp.ballistics.top
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trxjp.ballistics.top
+    udp: true
+  - name: 1.28_35
+    server: 777.htvviru.top
+    port: 3544
+    type: vmess
+    uuid: 3d81e6fb-c7f0-4791-af2e-82c93d149483
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 777.htvviru.top
+    network: ws
+    ws-opts:
+      path: /cctv13/hd.m3u8
+      headers:
+        Host: 777.htvviru.top
+    udp: true
+  - name: 1.28_36
+    server: 38.91.102.123
+    port: 5003
+    type: ss
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: 1.28_37
+    server: 42.237.112.208
+    port: 30987
+    type: ssr
+    cipher: chacha20-ietf
+    password: zztw9jk7gu
+    protocol: auth_aes128_sha1
+    obfs: http_simple
+    protocol-param: 7432:82TfWp
+    obfs-param: e5ab07432.microsoft.com
+    udp: true
+  - name: 1.28_38
+    server: 172.64.154.102
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: 1.28_39
+    server: ak1446.free.www.outline.network
+    port: 9101
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: 1.28_40
+    server: juzius.nmsl.pics
+    port: 443
+    type: vmess
+    uuid: 619db227-7616-409f-9ead-202ab41ff230
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: juzius.nmsl.pics
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: juzius.nmsl.pics
+    udp: true
+  - name: 1.28_41
+    server: 141.101.115.134
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: 1.28_42
+    server: 203.30.190.192
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: 1.28_43
+    server: 188.114.99.10
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: 1.28_44
+    server: 120.241.229.74
+    port: 50067
+    type: ss
+    cipher: aes-256-gcm
+    password: 7c458210-86ba-4d86-85c8-1234cc935f5e
+    udp: true
+  - name: 1.28_45
+    server: ovh-3.555530.xyz
+    port: 80
+    type: vmess
+    uuid: 000fe881-b655-4212-b804-b00f9970d5aa
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ovh-3.555530.xyz
+    network: ws
+    ws-opts:
+      path: /happy
+      headers:
+        Host: ovh-3.555530.xyz
+    udp: true
+  - name: 1.28_46
+    server: 172.64.152.150
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: 1.28_47
+    server: 65.49.207.221
+    port: 9059
+    type: ss
+    cipher: aes-256-gcm
+    password: gexPQBgSELQ6FYfa
+    udp: true
+  - name: 1.28_48
+    server: trld.ballistics.top
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trld.ballistics.top
+    udp: true
+  - name: 1.28_49
+    server: 38.91.102.123
+    port: 9102
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: 1.28_50
+    server: 190.93.246.2
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_51
+    server: 190.93.246.2
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_52
+    server: 172.99.188.99
+    port: 6379
+    type: ss
+    cipher: aes-256-gcm
+    password: zDNVedRFPQexG9v
+    udp: true
+  - name: 1.28_53
+    server: 138.2.35.81
+    port: 80
+    type: vmess
+    uuid: a0733fc9-457e-498d-c363-9ec774a74947
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /jun
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_54
+    server: mncc.cf
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: mncc.cf
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: mncc.cf
+    udp: true
+  - name: 1.28_55
+    server: 162.159.152.100
+    port: 2082
+    type: vmess
+    uuid: 8acf0ceb-510a-4f05-8175-f77c464d90ae
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: kz.cloudflare.quest
+    network: ws
+    ws-opts:
+      path: /aries
+      headers:
+        Host: kz.cloudflare.quest
+    udp: true
+  - name: 1.28_56
+    server: 190.93.244.2
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_57
+    server: 43.201.48.212
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: 1.28_58
+    server: 203.24.108.9
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: 1.28_59
+    server: 190.93.245.3
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: 1.28_60
+    server: trfg.ballistics.top
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: 1.28_61
+    server: 104.29.64.3
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: 1.28_62
+    server: 273b36f6-9db1-11ed-a8fc-0242ac120002.interface.buzz
+    port: 47516
+    type: ss
+    cipher: aes-256-gcm
+    password: 2f2a534d-5685-4319-bdaf-e2ee57f2c8a1
+    udp: true
+  - name: 1.28_63
+    server: 18.143.123.35
+    port: 80
+    type: vmess
+    uuid: 68df4838-46d0-4b5b-c3f0-a40ec7063245
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_64
+    server: cvywfavasdc.cymlr.xyz
+    port: 443
+    type: vmess
+    uuid: 23f4bc80-3b0a-4aa3-cbe5-b8be4e8c32fc
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: cvywfavasdc.cymlr.xyz
+    network: ws
+    ws-opts:
+      path: /ksebupo
+      headers:
+        Host: cvywfavasdc.cymlr.xyz
+    udp: true
+  - name: 1.28_65
+    server: az.hk01.ssru7.casa
+    port: 10035
+    type: vmess
+    uuid: b683d335-67ec-3538-94d2-e6bf9a600823
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tw04.ssru3.casa
+    network: ws
+    ws-opts:
+      path: /v2ray
+      headers:
+        Host: tw04.ssru3.casa
+    udp: true
+  - name: 1.28_66
+    server: relay-hk-az.fib-sys.cyou
+    port: 32154
+    type: trojan
+    password: 11a4e5be-3c87-37d2-aac8-00b85ef0fcdc
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: 1.28_67
+    server: 190.93.244.200
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: 1.28_68
+    server: cf.sudoer.net
+    port: 443
+    type: vmess
+    uuid: 3c83e22e-0bad-5ca6-ad1f-cb109b5a7834
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: scherehtzflk01.schere.net
+    network: ws
+    ws-opts:
+      path: /api05
+      headers:
+        Host: scherehtzflk01.schere.net
+    udp: true
+  - name: 1.28_69
+    server: vuk2.0bad.com
+    port: 443
+    type: vmess
+    uuid: 927094d3-d678-4763-8591-e240d0bcae87
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /chat
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_70
+    server: cf-lt.sharecentre.online
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: uk-2.sharecentre.online
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: uk-2.sharecentre.online
+    udp: true
+  - name: 1.28_71
+    server: vjp3.0bad.com
+    port: 443
+    type: vmess
+    uuid: 927094d3-d678-4763-8591-e240d0bcae87
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /chat
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_72
+    server: 38.91.102.123
+    port: 9102
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: 1.28_73
+    server: 203.30.188.190
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: 1.28_74
+    server: 172.64.153.150
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: 1.28_75
+    server: v2ray.online
+    port: 443
+    type: vmess
+    uuid: 2F094845-E2BD-EBF7-DEB7-995992436FAF
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: Amsterdam.v2ray.online
+    network: ws
+    ws-opts:
+      path: /speedtest
+      headers:
+        Host: Amsterdam.v2ray.online
+    udp: true
+  - name: 1.28_76
+    server: jp-01.legeth.tk
+    port: 80
+    type: vmess
+    uuid: b37bf119-e816-49bf-bc70-aa0be7c69f04
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: jp-01.legeth.tk
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: jp-01.legeth.tk
+    udp: true
+  - name: 1.28_77
+    server: 203.30.190.190
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_78
+    server: hohm.microsoft.com
+    port: 443
+    type: vmess
+    uuid: 2b214122-1906-428a-bbb7-a039cbb7cd5c
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: fr1.trump2023.org
+    network: ws
+    ws-opts:
+      path: /9JZFDTKE
+      headers:
+        Host: fr1.trump2023.org
+    udp: true
+  - name: 1.28_79
+    server: 141.101.114.32
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: 1.28_80
+    server: 152.69.197.74
+    port: 12345
+    type: vmess
+    uuid: b8a6bf58-485a-4046-b386-b3661bf65eff
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /bb
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_81
+    server: trld.ballistics.top
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trld.ballistics.top
+    udp: true
+  - name: 1.28_82
+    server: au.yangon.club
+    port: 443
+    type: vmess
+    uuid: 76f6ed54-7f61-4407-f49d-dd33d07ebd8f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_83
+    server: 185.162.228.228
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_84
+    server: ak1446.free.www.outline.network
+    port: 9101
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: 1.28_85
+    server: 172.67.135.55
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: 1.28_86
+    server: 8cdba5d8-7555-8c18-9808-2e907c1c5177.interface.buzz
+    port: 21565
+    type: ss
+    cipher: aes-256-gcm
+    password: 2f2a534d-5685-4319-bdaf-e2ee57f2c8a1
+    udp: true
+  - name: 1.28_87
+    server: 141.101.114.30
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: 1.28_88
+    server: xjp4h.mayaa.ml
+    port: 443
+    type: vmess
+    uuid: 82d5ea73-8002-4319-cd3c-29d1560bd290
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /dsadsa1dsadsa33434
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_89
+    server: 66.235.200.21
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: 1.28_90
+    server: 39.103.165.178
+    port: 50002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_91
+    server: oplg1.cfcdn2.xyz
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_92
+    server: cf-dx-dns.sharecentre.online
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us-dp2.sharecentre.online
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: us-dp2.sharecentre.online
+    udp: true
+  - name: 1.28_93
+    server: 106.55.234.95
+    port: 31372
+    type: vmess
+    uuid: 374d3519-455c-45b8-e3b1-0e2e9fcf4411
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: 1.28_94
+    server: 38.91.102.123
+    port: 5003
+    type: ss
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: 1.28_95
+    server: 172.64.154.155
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: 1.28_96
+    server: 203.30.191.193
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: 1.28_97
+    server: trxn.ballistics.top
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trxn.ballistics.top
+    udp: true
+  - name: 1.28_98
+    server: 38.91.102.123
+    port: 9101
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: 1.28_99
+    server: hucloud.tk
+    port: 443
+    type: vmess
+    uuid: 2df3ed4a-4313-45f9-b742-2f02ce593a6e
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /huhu
+      headers:
+        Host: ""
+    udp: true
+  - name: 1.28_100
+    server: 14.29.124.168
+    port: 25238
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
 proxy-groups:
   - name: 🌋
     type: select
@@ -1468,5 +2709,105 @@ proxy-groups:
       - 1_122
       - 1_123
       - 1_124
+      - 1.28_1
+      - 1.28_2
+      - 1.28_3
+      - 1.28_4
+      - 1.28_5
+      - 1.28_6
+      - 1.28_7
+      - 1.28_8
+      - 1.28_9
+      - 1.28_10
+      - 1.28_11
+      - 1.28_12
+      - 1.28_13
+      - 1.28_14
+      - 1.28_15
+      - 1.28_16
+      - 1.28_17
+      - 1.28_18
+      - 1.28_19
+      - 1.28_20
+      - 1.28_21
+      - 1.28_22
+      - 1.28_23
+      - 1.28_24
+      - 1.28_25
+      - 1.28_26
+      - 1.28_27
+      - 1.28_28
+      - 1.28_29
+      - 1.28_30
+      - 1.28_31
+      - 1.28_32
+      - 1.28_33
+      - 1.28_34
+      - 1.28_35
+      - 1.28_36
+      - 1.28_37
+      - 1.28_38
+      - 1.28_39
+      - 1.28_40
+      - 1.28_41
+      - 1.28_42
+      - 1.28_43
+      - 1.28_44
+      - 1.28_45
+      - 1.28_46
+      - 1.28_47
+      - 1.28_48
+      - 1.28_49
+      - 1.28_50
+      - 1.28_51
+      - 1.28_52
+      - 1.28_53
+      - 1.28_54
+      - 1.28_55
+      - 1.28_56
+      - 1.28_57
+      - 1.28_58
+      - 1.28_59
+      - 1.28_60
+      - 1.28_61
+      - 1.28_62
+      - 1.28_63
+      - 1.28_64
+      - 1.28_65
+      - 1.28_66
+      - 1.28_67
+      - 1.28_68
+      - 1.28_69
+      - 1.28_70
+      - 1.28_71
+      - 1.28_72
+      - 1.28_73
+      - 1.28_74
+      - 1.28_75
+      - 1.28_76
+      - 1.28_77
+      - 1.28_78
+      - 1.28_79
+      - 1.28_80
+      - 1.28_81
+      - 1.28_82
+      - 1.28_83
+      - 1.28_84
+      - 1.28_85
+      - 1.28_86
+      - 1.28_87
+      - 1.28_88
+      - 1.28_89
+      - 1.28_90
+      - 1.28_91
+      - 1.28_92
+      - 1.28_93
+      - 1.28_94
+      - 1.28_95
+      - 1.28_96
+      - 1.28_97
+      - 1.28_98
+      - 1.28_99
+      - 1.28_100
 rules:
   - MATCH,🌋
