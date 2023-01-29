@@ -1,0 +1,2587 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: w1_1
+    server: 168.138.206.141
+    port: 80
+    type: vmess
+    uuid: ad05e01f-c2c0-41da-e79c-ff68237317f7
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_2
+    server: 96.43.86.4
+    port: 80
+    type: vmess
+    uuid: 3fd6c07a-a946-4c3c-8565-3bb35d0096c5
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_3
+    server: 203.30.189.191
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: w1_4
+    server: au-01.legeth.tk
+    port: 80
+    type: vmess
+    uuid: b37bf119-e816-49bf-bc70-aa0be7c69f04
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: au-01.legeth.tk
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: au-01.legeth.tk
+    udp: true
+  - name: w1_5
+    server: 14.29.124.168
+    port: 25226
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_6
+    server: au.yangon.club
+    port: 443
+    type: vmess
+    uuid: 76f6ed54-7f61-4407-f49d-dd33d07ebd8f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_7
+    server: az.hk01.ssru7.casa
+    port: 10025
+    type: vmess
+    uuid: b683d335-67ec-3538-94d2-e6bf9a600823
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us05.ssru4.fun
+    network: ws
+    ws-opts:
+      path: /v2ray
+      headers:
+        Host: us05.ssru4.fun
+    udp: true
+  - name: w1_8
+    server: 14.29.124.168
+    port: 25271
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_9
+    server: 103.45.78.195
+    port: 10004
+    type: vmess
+    uuid: cb7001c7-e495-41ac-b942-f25f60523414
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_10
+    server: cf.sudoer.net
+    port: 443
+    type: vmess
+    uuid: 3c83e22e-0bad-5ca6-ad1f-cb109b5a7834
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: scherehtzflk01.schere.net
+    network: ws
+    ws-opts:
+      path: /api05
+      headers:
+        Host: scherehtzflk01.schere.net
+    udp: true
+  - name: w1_11
+    server: live15.suijiceshi.xyz
+    port: 2052
+    type: vmess
+    uuid: bfb32a33-cb31-4a10-ad54-b52da93d7173
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: live15.hlzuifv.cn
+    network: ws
+    ws-opts:
+      path: /xbov/6f42f0ef9d9257447d1f4d4391b4dd76e164c00fb47c0a318b3b1125e03f4d959921f11e97d0da21/media_0003.ts
+      headers:
+        Host: live15.hlzuifv.cn
+    udp: true
+  - name: w1_12
+    server: 198.41.215.5
+    port: 2082
+    type: vmess
+    uuid: 8acf0ceb-510a-4f05-8175-f77c464d90ae
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: kz.cloudflare.quest
+    network: ws
+    ws-opts:
+      path: /aries
+      headers:
+        Host: kz.cloudflare.quest
+    udp: true
+  - name: w1_13
+    server: 183.240.60.119
+    port: 10001
+    type: vmess
+    uuid: cb7001c7-e495-41ac-b942-f25f60523414
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_14
+    server: 162.159.135.42
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_15
+    server: vjp3.0bad.com
+    port: 443
+    type: vmess
+    uuid: 927094d3-d678-4763-8591-e240d0bcae87
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /chat
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_16
+    server: vn-01.legeth.tk
+    port: 80
+    type: vmess
+    uuid: b37bf119-e816-49bf-bc70-aa0be7c69f04
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: vn-01.legeth.tk
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: vn-01.legeth.tk
+    udp: true
+  - name: w1_17
+    server: 173.82.240.199
+    port: 44301
+    type: trojan
+    password: 6d64570c-81d4-30fa-b2e2-dce73e1a2702
+    skip-cert-verify: true
+    sni: lav002.jd0001.top
+    udp: true
+  - name: w1_18
+    server: 203.30.191.2
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_19
+    server: 14.29.124.168
+    port: 25233
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_20
+    server: 190.93.244.3
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_21
+    server: 14.29.124.168
+    port: 25296
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_22
+    server: 172.67.135.57
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_23
+    server: 43.206.224.222
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: w1_24
+    server: us2.sanfen001.pics
+    port: 443
+    type: vmess
+    uuid: b10abf21-761e-41bb-a45b-f07aea5101b9
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us1.sanfen001.pics
+    network: ws
+    ws-opts:
+      path: /zh-cn
+      headers:
+        Host: us1.sanfen001.pics
+    udp: true
+  - name: w1_25
+    server: 14.29.124.168
+    port: 25235
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_26
+    server: ovh-3.555530.xyz
+    port: 80
+    type: vmess
+    uuid: 000fe881-b655-4212-b804-b00f9970d5aa
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ovh-3.555530.xyz
+    network: ws
+    ws-opts:
+      path: /happy
+      headers:
+        Host: ovh-3.555530.xyz
+    udp: true
+  - name: w1_27
+    server: zhuyong.hucloud-dns.xyz
+    port: 443
+    type: vmess
+    uuid: 9a18cbb1-81d2-4720-9f09-46ea276b6ddb
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /huhublog
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_28
+    server: oplg1.zhujicn2.com
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_29
+    server: www.rinyin.top
+    port: 443
+    type: vmess
+    uuid: 10706e0a-8251-4cfc-b211-b908b99dfd5f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: www.rinyin.top
+    network: ws
+    ws-opts:
+      path: /7a17336201?ed=2048
+      headers:
+        Host: www.rinyin.top
+    udp: true
+  - name: w1_30
+    server: hn.xiaohouzi.club
+    port: 14185
+    type: trojan
+    password: f52e6827-d087-3fd0-9c66-ef87874c69ba
+    skip-cert-verify: true
+    sni: hktnew01.xiaohouzi.club
+    udp: true
+  - name: w1_31
+    server: 168.138.194.243
+    port: 33421
+    type: vmess
+    uuid: 94e56ff9-ccf1-414e-a114-46e0a79f6614
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_32
+    server: sgp.wyatt.cf
+    port: 443
+    type: vmess
+    uuid: 9359a511-d5fb-4556-d4e0-9fbefc921102
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /sg
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_33
+    server: 190.93.246.195
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: w1_34
+    server: 185.162.228.110
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_35
+    server: cdn.xia.me
+    port: 443
+    type: vmess
+    uuid: 68fe8d27-cbc8-4e72-90b7-70d3bb69dfd3
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us12.cachexy.ga
+    network: ws
+    ws-opts:
+      path: /api
+      headers:
+        Host: us12.cachexy.ga
+    udp: true
+  - name: w1_36
+    server: 14.29.124.168
+    port: 25284
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_37
+    server: cvywfavasdc.cymlr.xyz
+    port: 443
+    type: vmess
+    uuid: 23f4bc80-3b0a-4aa3-cbe5-b8be4e8c32fc
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: cvywfavasdc.cymlr.xyz
+    network: ws
+    ws-opts:
+      path: /ksebupo
+      headers:
+        Host: cvywfavasdc.cymlr.xyz
+    udp: true
+  - name: w1_38
+    server: 172.67.199.34
+    port: 443
+    type: vmess
+    uuid: 8763e625-929a-43da-b7bf-7e7bc2e57615
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lv.awsbest.com
+    network: ws
+    ws-opts:
+      path: /shared
+      headers:
+        Host: lv.awsbest.com
+    udp: true
+  - name: w1_39
+    server: 38.91.107.72
+    port: 2376
+    type: ss
+    cipher: aes-256-gcm
+    password: faBAoD54k87UJG7
+    udp: true
+  - name: w1_40
+    server: 38.91.107.72
+    port: 5003
+    type: ss
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: w1_41
+    server: 38.91.107.72
+    port: 5500
+    type: ss
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
+  - name: w1_42
+    server: 150.230.249.15
+    port: 46842
+    type: vmess
+    uuid: 4530b5ee-ced4-4e64-9285-1867fc5df7f8
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_43
+    server: 96.43.86.4
+    port: 17129
+    type: vmess
+    uuid: e67d0104-9de3-4a5a-9141-be673fbf094e
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_44
+    server: 213.183.53.177
+    port: 9015
+    type: ss
+    cipher: aes-256-cfb
+    password: ZpNDDKRu9MagNvaf
+    udp: true
+  - name: w1_45
+    server: 89.58.0.38
+    port: 808
+    type: trojan
+    password: e8fd97a4-856a-4226-abb8-725bf6193794
+    skip-cert-verify: true
+    sni: netcup38.powergforce.click
+    udp: true
+  - name: w1_46
+    server: 146.190.202.9
+    port: 57711
+    type: vmess
+    uuid: fc912850-b6da-4ec6-9348-f3d1d7471906
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: config.teams.microsoft.com
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: config.teams.microsoft.com
+    udp: true
+  - name: w1_47
+    server: 172.104.167.240
+    port: 7203
+    type: vmess
+    uuid: 9c52776b-4b01-4ae6-9f7d-25cd4725e13c
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: config.teams.microsoft.com
+    network: ws
+    ws-opts:
+      path: /sg1
+      headers:
+        Host: config.teams.microsoft.com
+    udp: true
+  - name: w1_48
+    server: 91.193.181.192
+    port: 8090
+    type: vmess
+    uuid: 08bc30e1-be39-4eb4-e887-e6579be15a45
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_49
+    server: 213.183.53.177
+    port: 9094
+    type: ss
+    cipher: aes-256-cfb
+    password: rpgbNnU9rDDU4aWZ
+    udp: true
+  - name: w1_50
+    server: 213.183.53.177
+    port: 9018
+    type: ss
+    cipher: aes-256-cfb
+    password: fG2artUmHfNT2cX7
+    udp: true
+  - name: w1_51
+    server: 135.181.235.21
+    port: 25034
+    type: vmess
+    uuid: e549fc8d-2416-46f7-aadc-8747553091b9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 135.181.235.21
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 135.181.235.21
+    udp: true
+  - name: w1_52
+    server: 163.197.211.159
+    port: 8080
+    type: vmess
+    uuid: 9878964a-3bb3-4e43-efe9-b3777fcc67d0
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /hkaa0
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_53
+    server: 88.80.188.46
+    port: 443
+    type: vmess
+    uuid: 927094d3-d678-4763-8591-e240d0bcae87
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vuk2.0bad.com
+    network: ws
+    ws-opts:
+      path: /chat
+      headers:
+        Host: vuk2.0bad.com
+    udp: true
+  - name: w1_54
+    server: 82.223.46.50
+    port: 2083
+    type: trojan
+    password: EGi7EzLOD3
+    skip-cert-verify: true
+    sni: freedom.wlfhope.website
+    udp: true
+  - name: w1_55
+    server: 198.252.107.240
+    port: 80
+    type: vmess
+    uuid: ee76cecf-1219-42be-ae3f-6b8077e4cacc
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: hk2.safepn.net
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: hk2.safepn.net
+    udp: true
+  - name: w1_56
+    server: 72.140.224.195
+    port: 800
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: G!yBwPWH3Vao
+    udp: true
+  - name: w1_57
+    server: 72.140.224.195
+    port: 803
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: G!yBwPWH3Vao
+    udp: true
+  - name: w1_58
+    server: 72.140.224.195
+    port: 810
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: G!yBwPWH3Vao
+    udp: true
+  - name: w1_59
+    server: 37.32.23.122
+    port: 443
+    type: vmess
+    uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /websocket/
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_60
+    server: 213.183.53.177
+    port: 9000
+    type: ss
+    cipher: aes-256-cfb
+    password: a3GFYt36Sm82Vys9
+    udp: true
+  - name: w1_61
+    server: 185.143.233.144
+    port: 80
+    type: vmess
+    uuid: 74830129-a56c-4362-a741-a95e338107fe
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 244.zirogame-86.site
+    network: ws
+    ws-opts:
+      path: /ray
+      headers:
+        Host: 244.zirogame-86.site
+    udp: true
+  - name: w1_62
+    server: 213.183.53.177
+    port: 9019
+    type: ss
+    cipher: aes-256-cfb
+    password: GA9KzeEgvfxNrgmM
+    udp: true
+  - name: w1_63
+    server: 38.64.138.145
+    port: 443
+    type: ss
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
+    udp: true
+  - name: w1_64
+    server: 213.183.53.177
+    port: 9003
+    type: ss
+    cipher: aes-256-cfb
+    password: JdmRK9gMEqFgs8nP
+    udp: true
+  - name: w1_65
+    server: 213.183.53.177
+    port: 9056
+    type: ss
+    cipher: aes-256-cfb
+    password: rNBfNuuANFCAk7KB
+    udp: true
+  - name: w1_66
+    server: 38.143.66.20
+    port: 5500
+    type: ss
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
+  - name: w1_67
+    server: 167.88.61.14
+    port: 7306
+    type: ss
+    cipher: aes-256-gcm
+    password: FoOiGlkAA9yPEGP
+    udp: true
+  - name: w1_68
+    server: 138.2.113.84
+    port: 443
+    type: trojan
+    password: b291d129-ee55-4801-a9b8-b5316e5c37b7
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: w1_69
+    server: 144.24.72.126
+    port: 443
+    type: trojan
+    password: 7118b5f4-0ea4-4c11-be7f-11471cb91e4a
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: w1_70
+    server: 152.67.160.174
+    port: 443
+    type: trojan
+    password: 54080134-2cba-4535-8599-95650bd9aa54
+    skip-cert-verify: true
+    sni: 152.67.160.174
+    udp: true
+  - name: w1_71
+    server: 51.15.0.113
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: w1_72
+    server: 168.138.43.89
+    port: 443
+    type: trojan
+    password: d06a3f01-1ff0-4792-9b8e-a5a604bc74a2
+    skip-cert-verify: true
+    sni: 168.138.43.89
+    udp: true
+  - name: w1_73
+    server: 152.67.98.30
+    port: 443
+    type: trojan
+    password: e8c1ab3c-89b3-4933-92df-682e6dce7819
+    skip-cert-verify: true
+    sni: 152.67.98.30
+    udp: true
+  - name: w1_74
+    server: 95.141.47.30
+    port: 808
+    type: trojan
+    password: e8fd97a4-856a-4226-abb8-725bf6193794
+    skip-cert-verify: true
+    sni: sefit30.powergforce.click
+    udp: true
+  - name: w1_75
+    server: 172.105.255.4
+    port: 443
+    type: vmess
+    uuid: 927094d3-d678-4763-8591-e240d0bcae87
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /chat
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_76
+    server: 129.150.44.64
+    port: 46075
+    type: vmess
+    uuid: da257e73-f02b-45ab-9916-7baf154c47a3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 129.150.44.64
+    network: ws
+    ws-opts:
+      path: /jhndsmlanj11223
+      headers:
+        Host: 129.150.44.64
+    udp: true
+  - name: w1_77
+    server: 135.181.235.21
+    port: 12951
+    type: vmess
+    uuid: 18827895-b647-4570-81e2-de3bd795fa04
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_78
+    server: 38.114.114.67
+    port: 8091
+    type: ss
+    cipher: aes-256-gcm
+    password: PCnnH6SQSnfoS27
+    udp: true
+  - name: w1_79
+    server: 213.183.53.177
+    port: 9007
+    type: ss
+    cipher: aes-256-cfb
+    password: kSPmvwdFzGMMW5pY
+    udp: true
+  - name: w1_80
+    server: 213.183.53.177
+    port: 9046
+    type: ss
+    cipher: aes-256-cfb
+    password: NvS8N4Vf8qAGPSCL
+    udp: true
+  - name: w1_81
+    server: 39.103.165.178
+    port: 50002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 32
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_82
+    server: 47.104.237.32
+    port: 50002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 32
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_83
+    server: 101.43.248.22
+    port: 8080
+    type: vmess
+    uuid: 39cf966e-365c-4e5e-f50e-fa9c3a8676bd
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_84
+    server: 213.183.53.177
+    port: 9011
+    type: ss
+    cipher: aes-256-cfb
+    password: M3t2ZEQcMGRWBjRa
+    udp: true
+  - name: w1_85
+    server: 213.183.53.177
+    port: 9026
+    type: ss
+    cipher: aes-256-cfb
+    password: QWDDvVE9npNurQfA
+    udp: true
+  - name: w1_86
+    server: 139.99.88.94
+    port: 2083
+    type: vmess
+    uuid: a2c8194b-fcfd-4c39-a6bd-31ea9f4ea671
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: cdnsg.casperco.online
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: cdnsg.casperco.online
+    udp: true
+  - name: w1_87
+    server: 213.183.53.177
+    port: 9005
+    type: ss
+    cipher: aes-256-cfb
+    password: ZET59LF6DvCC8KVt
+    udp: true
+  - name: w1_88
+    server: 138.2.45.243
+    port: 443
+    type: trojan
+    password: c19d1432-8b3e-4818-8837-3d160cf65908
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: w1_89
+    server: 124.221.131.176
+    port: 50797
+    type: vmess
+    uuid: fa4b6f8f-1264-45ec-9651-6160c12cabc5
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_90
+    server: 103.172.116.196
+    port: 3389
+    type: trojan
+    password: 0c6a3341e8d5ab17
+    skip-cert-verify: true
+    sni: f5465c4.pg.gladns.com
+    udp: true
+  - name: w1_91
+    server: 152.69.211.235
+    port: 80
+    type: vmess
+    uuid: d345916f-1673-4a98-f37d-49357c84ce03
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_92
+    server: 18.144.85.227
+    port: 12356
+    type: vmess
+    uuid: 2100274e-55ae-4686-a380-a66ae8b0ef1b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_93
+    server: 213.183.53.177
+    port: 9008
+    type: ss
+    cipher: aes-256-cfb
+    password: y9VURyNzJWNRYEGQ
+    udp: true
+  - name: w1_94
+    server: 141.193.213.20
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: w1_95
+    server: 203.30.188.188
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: w1_96
+    server: 172.99.188.99
+    port: 3389
+    type: ss
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: w1_97
+    server: 185.162.228.229
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: w1_98
+    server: 176.32.35.22
+    port: 80
+    type: vmess
+    uuid: a25881f3-967f-3265-bc7f-9e66857b016b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: v10a.toddns.tk
+    network: ws
+    ws-opts:
+      path: /fr-unlimitxxx
+      headers:
+        Host: v10a.toddns.tk
+    udp: true
+  - name: w1_99
+    server: 172.67.201.14
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_100
+    server: 104.149.155.13
+    port: 443
+    type: trojan
+    password: 17c412d9-f283-483c-b095-72605fb2840e
+    skip-cert-verify: true
+    sni: vzwzasc.cn
+    udp: true
+  - name: w1_101
+    server: 13.40.153.45
+    port: 11111
+    type: vmess
+    uuid: 7cb72883-9635-46eb-8531-8d697927ff04
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_102
+    server: 172.67.205.70
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg-gcore.sharecentre.online
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: sg-gcore.sharecentre.online
+    udp: true
+  - name: w1_103
+    server: 172.64.153.150
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: w1_104
+    server: 111.45.22.239
+    port: 50002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_105
+    server: 203.24.108.8
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: w1_106
+    server: 203.24.108.9
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_107
+    server: 162.159.128.100
+    port: 2082
+    type: vmess
+    uuid: 80837af3-1ed8-4686-fa8a-6bf9214d5351
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: UK.CLOUDFLARE.QUEST
+    network: ws
+    ws-opts:
+      path: /aries
+      headers:
+        Host: UK.CLOUDFLARE.QUEST
+    udp: true
+  - name: w1_108
+    server: 185.143.220.25
+    port: 443
+    type: vmess
+    uuid: f28e354e-c2d1-4983-9b07-5acaf1b3b3e5
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: dengxin.one
+    network: ws
+    ws-opts:
+      path: /6e9EtZ2dL
+      headers:
+        Host: dengxin.one
+    udp: true
+  - name: w1_109
+    server: 124.222.189.225
+    port: 80
+    type: vmess
+    uuid: a8c9ad5b-1f58-4234-b5fe-a895bee9a047
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_110
+    server: 198.41.212.150
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: w1_111
+    server: 141.193.213.10
+    port: 443
+    type: vmess
+    uuid: 2b214122-1906-428a-bbb7-a039cbb7cd5c
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: fr1.trump2023.org
+    network: ws
+    ws-opts:
+      path: /9JZFDTKE
+      headers:
+        Host: fr1.trump2023.org
+    udp: true
+  - name: w1_112
+    server: 193.203.203.53
+    port: 28364
+    type: vmess
+    uuid: c14b9faa-b2ff-4f2b-80c5-499bbdb9b886
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: w1_113
+    server: 172.67.164.123
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_114
+    server: 162.159.153.2
+    port: 443
+    type: vmess
+    uuid: ba84b2f4-93b5-406c-a01e-e8e67cf7bf25
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us1.sanfen001.pics
+    network: ws
+    ws-opts:
+      path: /zh-cn
+      headers:
+        Host: us1.sanfen001.pics
+    udp: true
+  - name: w1_115
+    server: 203.30.190.190
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: w1_116
+    server: 172.99.188.99
+    port: 5003
+    type: ss
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: w1_117
+    server: 190.93.245.3
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_118
+    server: 2606:4700:20::ac43:49d0
+    port: 80
+    type: vmess
+    uuid: 8763e625-929a-43da-b7bf-7e7bc2e57615
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: lv.awsbest.com
+    network: ws
+    ws-opts:
+      path: /shared
+      headers:
+        Host: lv.awsbest.com
+    udp: true
+  - name: w1_119
+    server: 52.80.117.48
+    port: 21565
+    type: ss
+    cipher: aes-256-gcm
+    password: 2f2a534d-5685-4319-bdaf-e2ee57f2c8a1
+    udp: true
+  - name: w1_120
+    server: 103.45.78.195
+    port: 10001
+    type: vmess
+    uuid: cb7001c7-e495-41ac-b942-f25f60523414
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_121
+    server: 104.29.64.36
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_122
+    server: 14.29.124.168
+    port: 25272
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_123
+    server: 203.30.189.190
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_124
+    server: 159.223.91.163
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trxjp.ballistics.top
+    udp: true
+  - name: w1_125
+    server: 777.htvviru.top
+    port: 3544
+    type: vmess
+    uuid: 3d81e6fb-c7f0-4791-af2e-82c93d149483
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 777.htvviru.top
+    network: ws
+    ws-opts:
+      path: /cctv13/hd.m3u8
+      headers:
+        Host: 777.htvviru.top
+    udp: true
+  - name: w1_126
+    server: 38.91.102.123
+    port: 5003
+    type: ss
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: w1_127
+    server: 42.237.112.208
+    port: 30987
+    type: ssr
+    cipher: chacha20-ietf
+    password: zztw9jk7gu
+    protocol: auth_aes128_sha1
+    obfs: http_simple
+    protocol-param: 7432:82TfWp
+    obfs-param: e5ab07432.microsoft.com
+    udp: true
+  - name: w1_128
+    server: 172.64.154.102
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: w1_129
+    server: ak1446.free.www.outline.network
+    port: 9101
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: w1_130
+    server: juzius.nmsl.pics
+    port: 443
+    type: vmess
+    uuid: 619db227-7616-409f-9ead-202ab41ff230
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: juzius.nmsl.pics
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: juzius.nmsl.pics
+    udp: true
+  - name: w1_131
+    server: 141.101.115.134
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: w1_132
+    server: 203.30.190.192
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: w1_133
+    server: 188.114.99.10
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_134
+    server: 120.241.229.74
+    port: 50067
+    type: ss
+    cipher: aes-256-gcm
+    password: 7c458210-86ba-4d86-85c8-1234cc935f5e
+    udp: true
+  - name: w1_135
+    server: 2606:4700:3036::6815:3254
+    port: 80
+    type: vmess
+    uuid: 000fe881-b655-4212-b804-b00f9970d5aa
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ovh-3.555530.xyz
+    network: ws
+    ws-opts:
+      path: /happy
+      headers:
+        Host: ovh-3.555530.xyz
+    udp: true
+  - name: w1_136
+    server: 172.64.152.150
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: w1_137
+    server: 65.49.207.221
+    port: 9059
+    type: ss
+    cipher: aes-256-gcm
+    password: gexPQBgSELQ6FYfa
+    udp: true
+  - name: w1_138
+    server: 144.126.200.175
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trld.ballistics.top
+    udp: true
+  - name: w1_139
+    server: 38.91.102.123
+    port: 9102
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: w1_140
+    server: 190.93.246.2
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: w1_141
+    server: 172.99.188.99
+    port: 6379
+    type: ss
+    cipher: aes-256-gcm
+    password: zDNVedRFPQexG9v
+    udp: true
+  - name: w1_142
+    server: 138.2.35.81
+    port: 80
+    type: vmess
+    uuid: a0733fc9-457e-498d-c363-9ec774a74947
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /jun
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_143
+    server: 2a06:98c1:3121::1
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: mncc.cf
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: mncc.cf
+    udp: true
+  - name: w1_144
+    server: 162.159.152.100
+    port: 2082
+    type: vmess
+    uuid: 8acf0ceb-510a-4f05-8175-f77c464d90ae
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: kz.cloudflare.quest
+    network: ws
+    ws-opts:
+      path: /aries
+      headers:
+        Host: kz.cloudflare.quest
+    udp: true
+  - name: w1_145
+    server: 190.93.244.2
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: w1_146
+    server: 43.201.48.212
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: w1_147
+    server: 68.183.70.188
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trfg.ballistics.top
+    udp: true
+  - name: w1_148
+    server: 104.29.64.3
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_149
+    server: 52.80.117.48
+    port: 47516
+    type: ss
+    cipher: aes-256-gcm
+    password: 2f2a534d-5685-4319-bdaf-e2ee57f2c8a1
+    udp: true
+  - name: w1_150
+    server: 18.143.123.35
+    port: 80
+    type: vmess
+    uuid: 68df4838-46d0-4b5b-c3f0-a40ec7063245
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_151
+    server: 2606:4700:3032::ac43:8948
+    port: 443
+    type: vmess
+    uuid: 23f4bc80-3b0a-4aa3-cbe5-b8be4e8c32fc
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: cvywfavasdc.cymlr.xyz
+    network: ws
+    ws-opts:
+      path: /ksebupo
+      headers:
+        Host: cvywfavasdc.cymlr.xyz
+    udp: true
+  - name: w1_152
+    server: 120.240.236.120
+    port: 10035
+    type: vmess
+    uuid: b683d335-67ec-3538-94d2-e6bf9a600823
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tw04.ssru3.casa
+    network: ws
+    ws-opts:
+      path: /v2ray
+      headers:
+        Host: tw04.ssru3.casa
+    udp: true
+  - name: w1_153
+    server: 20.187.108.142
+    port: 32154
+    type: trojan
+    password: 11a4e5be-3c87-37d2-aac8-00b85ef0fcdc
+    skip-cert-verify: true
+    sni: relay-hk-az.fib-sys.cyou
+    udp: true
+  - name: w1_154
+    server: 190.93.244.200
+    port: 443
+    type: vmess
+    uuid: 4612618c-24cd-4379-9924-cfdf3d61fa5a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: opfr1.v2rayfree1.xyz
+    network: ws
+    ws-opts:
+      path: /IYKLD53M
+      headers:
+        Host: opfr1.v2rayfree1.xyz
+    udp: true
+  - name: w1_155
+    server: 173.245.58.233
+    port: 443
+    type: vmess
+    uuid: 3c83e22e-0bad-5ca6-ad1f-cb109b5a7834
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: scherehtzflk01.schere.net
+    network: ws
+    ws-opts:
+      path: /api05
+      headers:
+        Host: scherehtzflk01.schere.net
+    udp: true
+  - name: w1_156
+    server: cf-lt.sharecentre.online
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: uk-2.sharecentre.online
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: uk-2.sharecentre.online
+    udp: true
+  - name: w1_157
+    server: 172.105.220.10
+    port: 443
+    type: vmess
+    uuid: 927094d3-d678-4763-8591-e240d0bcae87
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /chat
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_158
+    server: 203.30.188.190
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: w1_159
+    server: 2606:4700:20::ac43:44fd
+    port: 443
+    type: vmess
+    uuid: 2F094845-E2BD-EBF7-DEB7-995992436FAF
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: Amsterdam.v2ray.online
+    network: ws
+    ws-opts:
+      path: /speedtest
+      headers:
+        Host: Amsterdam.v2ray.online
+    udp: true
+  - name: w1_160
+    server: 2606:4700:3032::ac43:9da3
+    port: 80
+    type: vmess
+    uuid: b37bf119-e816-49bf-bc70-aa0be7c69f04
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: jp-01.legeth.tk
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: jp-01.legeth.tk
+    udp: true
+  - name: w1_161
+    server: 141.101.114.32
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: w1_162
+    server: 152.69.197.74
+    port: 12345
+    type: vmess
+    uuid: b8a6bf58-485a-4046-b386-b3661bf65eff
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /bb
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_163
+    server: 170.64.133.209
+    port: 443
+    type: vmess
+    uuid: 76f6ed54-7f61-4407-f49d-dd33d07ebd8f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_164
+    server: 185.162.228.228
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: w1_165
+    server: 172.67.135.55
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.cfcdn2.xyz
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: oplg1.cfcdn2.xyz
+    udp: true
+  - name: w1_166
+    server: 141.101.114.30
+    port: 443
+    type: vmess
+    uuid: 40d496a6-ceeb-4096-baeb-4cc52b205621
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg1.trump2023.us
+    network: ws
+    ws-opts:
+      path: /ECTCJ0DF
+      headers:
+        Host: lg1.trump2023.us
+    udp: true
+  - name: w1_167
+    server: 66.235.200.21
+    port: 443
+    type: vmess
+    uuid: 56a2188b-2ab7-402c-b9b8-34847fdf0958
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: oplg1.zhujicn2.com
+    network: ws
+    ws-opts:
+      path: /5QNROSRV
+      headers:
+        Host: oplg1.zhujicn2.com
+    udp: true
+  - name: w1_168
+    server: oplg1.cfcdn2.xyz
+    port: 443
+    type: vmess
+    uuid: c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /AUIKN8AU
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_169
+    server: cf-dx-dns.sharecentre.online
+    port: 443
+    type: vmess
+    uuid: 20e92881-5fb4-4b05-bc77-57929476dc69
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us-dp2.sharecentre.online
+    network: ws
+    ws-opts:
+      path: /shirker
+      headers:
+        Host: us-dp2.sharecentre.online
+    udp: true
+  - name: w1_170
+    server: 106.55.234.95
+    port: 31372
+    type: vmess
+    uuid: 374d3519-455c-45b8-e3b1-0e2e9fcf4411
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: w1_171
+    server: 172.64.154.155
+    port: 443
+    type: vmess
+    uuid: 5f64fa65-7b14-49c5-954d-aa15c6bfcacd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: clash6.ssr-free.xyz
+    network: ws
+    ws-opts:
+      path: /dongtaiwang.com
+      headers:
+        Host: clash6.ssr-free.xyz
+    udp: true
+  - name: w1_172
+    server: 203.30.191.193
+    port: 443
+    type: vmess
+    uuid: 17b2a313-37a0-4945-a8e4-e63375506b4a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lg10.cfcdn1.xyz
+    network: ws
+    ws-opts:
+      path: /A2DJOPFT
+      headers:
+        Host: lg10.cfcdn1.xyz
+    udp: true
+  - name: w1_173
+    server: 170.64.130.150
+    port: 443
+    type: trojan
+    password: 0c355515-b1e5-4c0a-b843-e1defbe7c0fa
+    skip-cert-verify: true
+    sni: trxn.ballistics.top
+    udp: true
+  - name: w1_174
+    server: 38.91.102.123
+    port: 9101
+    type: ss
+    cipher: aes-256-gcm
+    password: e4FCWrgpkji3QY
+    udp: true
+  - name: w1_175
+    server: 14.29.124.168
+    port: 25238
+    type: ss
+    cipher: aes-128-cfb
+    password: QazEdcTgb159@$*
+    udp: true
+  - name: w1_176
+    server: 172.64.141.75
+    port: 80
+    type: vmess
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg3-v2ray.sshkit.org
+    network: ws
+    ws-opts:
+      path: /sshkit/1736960111/63b1af7a5f43f/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+    udp: true
+  - name: w1_177
+    server: "2a06:98c1:3122::"
+    port: 443
+    type: vmess
+    uuid: 2b214122-1906-428a-bbb7-a039cbb7cd5c
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: fr1.trump2023.org
+    network: ws
+    ws-opts:
+      path: /9JZFDTKE
+      headers:
+        Host: fr1.trump2023.org
+    udp: true
+  - name: w1_178
+    server: 2a06:98c1:3121::3
+    port: 443
+    type: vmess
+    uuid: 82d5ea73-8002-4319-cd3c-29d1560bd290
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /dsadsa1dsadsa33434
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_179
+    server: id1-trojan.clashmwns.com
+    port: 443
+    type: trojan
+    password: 60d1c550-82ac-11ed-88c9-1239d0255272
+    skip-cert-verify: true
+    sni: isi-bugmu.com
+    udp: true
+  - name: w1_180
+    server: id2-trojan.clashmwns.com
+    port: 443
+    type: trojan
+    password: 60d1c550-82ac-11ed-88c9-1239d0255272
+    skip-cert-verify: true
+    sni: isi-bugmu.com
+    udp: true
+  - name: w1_181
+    server: saoke.site
+    port: 443
+    type: vmess
+    uuid: 3feff3a5-6bf4-42f8-aede-635f0ce5ccd8
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /RL2QZ6UP
+      headers:
+        Host: ""
+    udp: true
+  - name: w1_182
+    server: saoke.site
+    port: 443
+    type: trojan
+    password: admin123
+    skip-cert-verify: true
+    sni: v9.byteicdn.com
+    udp: true
+  - name: w1_183
+    server: 104.20.74.141
+    port: 80
+    type: ss
+    cipher: 2022-blake3-aes-256-gcm
+    password: Jr1FbKafhVXkoFDhSYCg7t1ed9scEgepfbdcJACI2P6j
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: core.vpnws.site
+      path: /
+      tls: false
+      mux: true
+      skip-cert-verify: true
+    udp: true
+  - name: w1_184
+    server: 172.67.73.39
+    port: 443
+    type: trojan
+    password: mainssh-opoksjhh
+    skip-cert-verify: true
+    sni: sg3tws.mainssh.xyz
+    udp: true
+  - name: w1_185
+    server: 172.67.73.39
+    port: 80
+    type: vless
+    uuid: 3bae6fa2-6655-4661-9484-b015e253bd1f
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg5.v2vless.xyz
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: sg5.v2vless.xyz
+    udp: true
+  - name: w1_186
+    server: 172.67.73.39
+    port: 80
+    type: vmess
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    alterId: 16
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sgv-1.openv2ray.com
+    network: ws
+    ws-opts:
+      path: /opentunnel?user=opentunnel.net-nyobakae
+      headers:
+        Host: sgv-1.openv2ray.com
+    udp: true
+  - name: w1_187
+    server: 172.67.73.39
+    port: 443
+    type: vless
+    uuid: 1866d564-d2b0-4f20-8279-382ac119282d
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg2lws.mainssh.xyz
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: sg2lws.mainssh.xyz
+    udp: true
+  - name: w1_188
+    server: 172.67.73.39
+    port: 443
+    type: vmess
+    uuid: fe218306-4f26-49ea-a57f-908ab5646fb7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%2F"
+    udp: true
+proxy-groups:
+  - name: 😨
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - w1_1
+      - w1_2
+      - w1_3
+      - w1_4
+      - w1_5
+      - w1_6
+      - w1_7
+      - w1_8
+      - w1_9
+      - w1_10
+      - w1_11
+      - w1_12
+      - w1_13
+      - w1_14
+      - w1_15
+      - w1_16
+      - w1_17
+      - w1_18
+      - w1_19
+      - w1_20
+      - w1_21
+      - w1_22
+      - w1_23
+      - w1_24
+      - w1_25
+      - w1_26
+      - w1_27
+      - w1_28
+      - w1_29
+      - w1_30
+      - w1_31
+      - w1_32
+      - w1_33
+      - w1_34
+      - w1_35
+      - w1_36
+      - w1_37
+      - w1_38
+      - w1_39
+      - w1_40
+      - w1_41
+      - w1_42
+      - w1_43
+      - w1_44
+      - w1_45
+      - w1_46
+      - w1_47
+      - w1_48
+      - w1_49
+      - w1_50
+      - w1_51
+      - w1_52
+      - w1_53
+      - w1_54
+      - w1_55
+      - w1_56
+      - w1_57
+      - w1_58
+      - w1_59
+      - w1_60
+      - w1_61
+      - w1_62
+      - w1_63
+      - w1_64
+      - w1_65
+      - w1_66
+      - w1_67
+      - w1_68
+      - w1_69
+      - w1_70
+      - w1_71
+      - w1_72
+      - w1_73
+      - w1_74
+      - w1_75
+      - w1_76
+      - w1_77
+      - w1_78
+      - w1_79
+      - w1_80
+      - w1_81
+      - w1_82
+      - w1_83
+      - w1_84
+      - w1_85
+      - w1_86
+      - w1_87
+      - w1_88
+      - w1_89
+      - w1_90
+      - w1_91
+      - w1_92
+      - w1_93
+      - w1_94
+      - w1_95
+      - w1_96
+      - w1_97
+      - w1_98
+      - w1_99
+      - w1_100
+      - w1_101
+      - w1_102
+      - w1_103
+      - w1_104
+      - w1_105
+      - w1_106
+      - w1_107
+      - w1_108
+      - w1_109
+      - w1_110
+      - w1_111
+      - w1_112
+      - w1_113
+      - w1_114
+      - w1_115
+      - w1_116
+      - w1_117
+      - w1_118
+      - w1_119
+      - w1_120
+      - w1_121
+      - w1_122
+      - w1_123
+      - w1_124
+      - w1_125
+      - w1_126
+      - w1_127
+      - w1_128
+      - w1_129
+      - w1_130
+      - w1_131
+      - w1_132
+      - w1_133
+      - w1_134
+      - w1_135
+      - w1_136
+      - w1_137
+      - w1_138
+      - w1_139
+      - w1_140
+      - w1_141
+      - w1_142
+      - w1_143
+      - w1_144
+      - w1_145
+      - w1_146
+      - w1_147
+      - w1_148
+      - w1_149
+      - w1_150
+      - w1_151
+      - w1_152
+      - w1_153
+      - w1_154
+      - w1_155
+      - w1_156
+      - w1_157
+      - w1_158
+      - w1_159
+      - w1_160
+      - w1_161
+      - w1_162
+      - w1_163
+      - w1_164
+      - w1_165
+      - w1_166
+      - w1_167
+      - w1_168
+      - w1_169
+      - w1_170
+      - w1_171
+      - w1_172
+      - w1_173
+      - w1_174
+      - w1_175
+      - w1_176
+      - w1_177
+      - w1_178
+      - w1_179
+      - w1_180
+      - w1_181
+      - w1_182
+      - w1_183
+      - w1_184
+      - w1_185
+      - w1_186
+      - w1_187
+      - w1_188
+rules:
+  - MATCH,😨
