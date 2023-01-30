@@ -1,0 +1,246 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: true
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+rule-providers:
+  BlockAds:
+    type: http
+    behavior: classical
+    path: "./rule_provider/BlockAds.yaml"
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
+    interval: 86400
+  reject:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+    path: "./rule_provider/reject.yaml"
+    interval: 86400
+proxy-providers:
+  VPN1:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN1.yaml 
+    path: "./proxy_provider1/VPN1.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN2:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN2.yaml 
+    path: "./proxy_provider1/VPN2.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN3:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN3.yaml
+    path: "./proxy_provider1/VPN3.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN4:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN4.yaml
+    path: "./proxy_provider1/VPN4.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN5:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN5.yaml
+    path: "./proxy_provider1/VPN5.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN6:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN6.yaml
+    path: "./proxy_provider1/VPN6.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN7:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN7.yaml
+    path: "./proxy_provider1/VPN7.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN8:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN8.yaml
+    path: "./proxy_provider1/VPN8.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN9:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN9.yaml
+    path: "./proxy_provider1/VPN9.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN10:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN10.yaml
+    path: "./proxy_provider1/VPN10.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN11:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN11.yaml
+    path: "./proxy_provider1/VPN11.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200
+  VPN12:
+    type: http
+    behavior: proxy
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_provider1/VPN12.yaml
+    path: "./proxy_provider1/VPN12.yaml"
+    health-check:
+      enable: true
+      url: http://cp.cloudflare.com/generate_204
+      interval: 200            
+proxy-groups:
+- name: proxy
+  type: select
+  health-check:
+  enable: true
+  disable-udp: false
+  proxies:
+  - LOADBALANCE
+  - best
+  - best2
+  url: http://www.gstatic.com/generate_204
+  interval: '500'
+- name: LOADBALANCE
+  type: load-balance
+  strategy: round-robin
+  health-check:
+  enable: true
+  disable-udp: false
+  use:
+  - VPN1
+  - VPN2
+  - VPN3
+  - VPN4
+  - VPN5
+  - VPN6
+  - VPN7
+  - VPN9
+  - VPN8
+  - VPN10
+  - VPN11
+  - VPN12
+  url: http://www.gstatic.com/generate_204
+  interval: '180'
+- name: best
+  type: url-test
+  url: http://hi.bonds.id/ping
+  interval: 300
+  tolerance: 100
+  health-check:
+  enable: true
+  disable-udp: false
+  use:
+  - VPN1
+  - VPN2
+  - VPN3
+  - VPN4
+  - VPN5
+  - VPN6
+- name: best2
+  type: url-test
+  url: http://hi.bonds.id/ping
+  interval: 300
+  tolerance: 100
+  health-check:
+  enable: true
+  disable-udp: false
+  use:
+  - VPN6
+  - VPN8
+  - VPN9
+  - VPN10
+  - VPN11
+  - VPN12
+- name: STREAMING
+  type: select
+  health-check:
+  enable: true
+  disable-udp: false
+  proxies:
+  - best
+  - best2
+  - LOADBALANCE
+rules:
+  - IP-CIDR,127.0.0.1/32,REJECT,no-resolve,udp
+  - IP-CIDR6,::1/128,REJECT,no-resolve,udp
+  # network(tcp/udp) condition for all rules 
+  - DOMAIN-SUFFIX,ad.com,REJECT,udp
+  - SRC-IP-CIDR,192.168.1.201/32,DIRECT,tcp
+  - DOMAIN-SUFFIX,bilibili.com,DIRECT,tcp
+  - DOMAIN-SUFFIX,bilibili.com,REJECT,udp
+  - DOMAIN-SUFFIX,github.com,DIRECT,no-resolve,tcp
+  - DOMAIN-SUFFIX,github.io,DIRECT,no-resolve,tcp
+  - DOMAIN-SUFFIX,githubapp.com,DIRECT,no-resolve,tcp
+  - DOMAIN-SUFFIX,githubassets.com,DIRECT,no-resolve,tcp
+  - DOMAIN-SUFFIX,githubusercontent.com,DIRECT,no-resolve,tcp
+  - DOMAIN-KEYWORD,github,DIRECT,no-resolve,tcp
+  - DOMAIN-KEYWORD,appteka.store,DIRECT,no-resolve,tcp
+  - DOMAIN-SUFFIX,collector.githubapp.com,DIRECT,no-resolve,tcp
+  - RULE-SET,BlockAds,REJECT,udp
+  - MATCH,STREAMING
