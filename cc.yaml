@@ -1,0 +1,326 @@
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 0.0.0.0:9090
+proxies:  
+  
+proxy-groups:
+  - name: 🎯 select
+    type: select
+    proxies:
+      - ♻️ url-test
+    use:
+      - Global
+      - ss
+      - ssr
+      - others
+      - Europe
+      - Oceania
+      - South America
+      - North America
+      - Taiwan
+      - HongKong
+      - China
+      - Pool
+      - Relay
+      - Africa
+      - Asia
+      - Speed
+      - trojan
+      - v2ray
+  - name: 👉 Global
+    type: select
+    use:
+      - Global      
+  - name: ♠️ SS
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - ss
+  - name: ♣️ SSR
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - ssr
+  - name: ♥️ V2ray
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - v2ray
+  - name: ♦️ Trojan
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - trojan 
+  - name: 🚓 Speed
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Speed      
+  - name: 🚑 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Relay 
+  - name: 🚒 Pool
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Pool      
+  - name: 🇨🇳 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - China
+  - name: 🇭🇰 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - HongKong
+  - name: 🇹🇼 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Taiwan      
+  - name: 🇨🇳 Asia
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Asia
+  - name: 🇺🇸 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - North America
+  - name: 🇵🇾 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - South America   
+  - name: 🇦🇺 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Oceania
+  - name: 🇬🇧 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Europe
+  - name: 🇿🇦 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - Africa
+  - name: 🏴‍☠️ 
+    type: url-test
+    url: http://www.google.com
+    interval: 300
+    use:
+      - others
+  - name: ♻️ url-test
+    type: url-test
+    use:
+      - Global
+    url: http://www.google.com
+    interval: 300
+  - name: 🔀 load-balance
+    type: load-balance
+    use:
+      - Global
+    url: http://www.google.com
+    interval: 100
+  - name: 🔃 fallback
+    type: fallback
+    use:
+      - Global
+    url: http://www.google.com
+    interval: 300
+  - name: 💧DIRECT
+    type: select
+    proxies:
+      - DIRECT
+
+proxy-providers:
+  China:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-China.yaml
+    path: free.iam7.tk/provider-China.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+  HongKong:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-HongKong.yaml
+    path: free.iam7.tk/provider-HongKong.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  Taiwan:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-Taiwan.yaml
+    path: free.iam7.tk/provider-Taiwan.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204 
+  Speed:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-Speed.yaml
+    path: free.iam7.tk/provider-Speed.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204      
+  Relay:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-Relay.yaml
+    path: free.iam7.tk/provider-Relay.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  Pool:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-Pool.yaml
+    path: free.iam7.tk/provider-Pool.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204 
+  ss:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-ss.yaml
+    path: free.iam7.tk/provider-ss.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  ssr:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-ssr.yam
+    path: free.iam7.tk/provider-ssr.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  v2ray:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-vmess.yaml
+    path: free.iam7.tk/provider-vmess.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204 
+  trojan:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-trojan.yaml
+    path: free.iam7.tk/provider-trojan.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204      
+  Asia:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-Asia.yaml
+    path: free.iam7.tk/provider-Asia.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204 
+  North America:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/Provider-North America.yaml
+    path: free.iam7.tk/Provider-North America.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204      
+  South America:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-South America.yaml
+    path: free.iam7.tk/provider-South America.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  Oceania:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-Oceania.yaml
+    path: free.iam7.tk/provider-Oceania.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  Europe:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-Europe.yaml
+    path: free.iam7.tk/provider-Europe.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  Africa:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/Provider-Africa.yaml
+    path: free.iam7.tk/Provider-Africa.yaml
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  others:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-others.yaml
+    path: free.iam7.tk/provider-others.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+  Global:
+    type: http
+    url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider.yaml
+    path: free.iam7.tk/provider.yaml
+    interval: 500
+    health-check:
+      enable: true
+      interval: 120
+      url: http://www.gstatic.com/generate_204
+      
+rules:
+  - MATCH,🎯 select
