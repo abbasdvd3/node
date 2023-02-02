@@ -1,0 +1,2 @@
+proxies:
+- {"name":"🇧🇷BR_155","server":"144.22.171.182","type":"vmess","country":"🇧🇷BR","port":17207,"uuid":"a0a098af-6a76-427f-df91-3c3dd6796e22","alterId":0,"cipher":"auto","network":"ws","ws-path":"/","http-opts":{},"h2-opts":{},"skip-cert-verify":true}
