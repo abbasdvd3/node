@@ -43879,11 +43879,6 @@ proxy-groups:
       - ss_5659
       - ss_5660
       - ss_5661
-- name: 🛑 block
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,DIRECT
   - DOMAIN-SUFFIX,ip6-localhost,DIRECT
