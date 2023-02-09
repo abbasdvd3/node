@@ -1,4 +1,3 @@
-mixed-port: 7890
 allow-lan: true
 mode: Rule
 log-level: info
@@ -36,103 +35,86 @@ proxy-groups:
   - name: ♠️ SS
     type: url-test
     url: http://www.gstatic.com/generate_204
-    interval: 300
     use:
       - ss
   - name: ♣️ SSR
     type: url-test
     url: http://www.gstatic.com/generate_204
-    interval: 300
     use:
       - ssr
   - name: ♥️ V2ray
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - v2ray
   - name: ♦️ Trojan
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - trojan 
   - name: 🚓 Speed
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Speed      
   - name: 🚑 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Relay 
   - name: 🚒 Pool
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Pool      
   - name: 🇨🇳 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - China
   - name: 🇭🇰 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - HongKong
   - name: 🇹🇼 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Taiwan      
   - name: 🇨🇳 Asia
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Asia
   - name: 🇺🇸 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - North America
   - name: 🇵🇾 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - South America   
   - name: 🇦🇺 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Oceania
   - name: 🇬🇧 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Europe
   - name: 🇿🇦 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - Africa
   - name: 🏴‍☠️ 
     type: url-test
     url: http://www.google.com
-    interval: 300
     use:
       - others
   - name: ♻️ url-test
@@ -140,19 +122,16 @@ proxy-groups:
     use:
       - Global
     url: http://www.google.com
-    interval: 300
   - name: 🔀 load-balance
     type: load-balance
     use:
       - Global
     url: http://www.google.com
-    interval: 100
   - name: 🔃 fallback
     type: fallback
     use:
       - Global
     url: http://www.google.com
-    interval: 300
   - name: 💧DIRECT
     type: select
     proxies:
