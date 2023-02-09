@@ -1,33 +1,9 @@
-mixed-port: 7890
+
 allow-lan: true
 mode: Rule
 external-controller: 0.0.0.0:9090
 log-level: debug
-dns:
-  enabled: true
-  nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-  fallback:
-    - 8.8.8.8
-    - 8.8.4.4
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
-
 proxies:
-rule-providers:
-   BlockAds:
-    type: http
-    behavior: classical
-    path: "./rule_provider/BlockAds.yaml"
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising_Classical.yaml
-    interval: 86400
-   reject:
-    type: http
-    behavior: domain
-    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
-    path: "./rule_provider/reject.yaml"
-    interval: 86400 
 proxy-providers:
   "\U0001F4F6VPN1\U0001F4F6":
     type: http
@@ -69,8 +45,6 @@ proxy-groups:
   - "\U0001F4F6VPN1\U0001F4F6"
   - "\U0001F4F6VPN3\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '500'
-  tolerance: '150'
 - name: "\U0001F4F6test2\U0001F4F6"
   type: url-test
   disable-udp: false
@@ -78,8 +52,6 @@ proxy-groups:
   - "\U0001F4F6VPN2\U0001F4F6"
   - "\U0001F4F6VPN4\U0001F4F6"
   url: http://www.gstatic.com/generate_204
-  interval: '500'
-  tolerance: '150'
 - name: "♻️LOADBALANCE♻️"
   type: load-balance
   strategy: round-robin
@@ -89,22 +61,6 @@ proxy-groups:
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.gstatic.com/generate_204
   interval: '300'
-- name: "\U0001F6A5PING\U0001F6A5"
-  type: url-test
-  disable-udp: false
-  proxies:
-  - "\U0001F4F6test1\U0001F4F6"
-  - "\U0001F4F6test2\U0001F4F6"
-  url: http://cp.cloudflare.com/generate_204
-  interval: '500'
-  tolerance: '150'
-- name: OPSI•ADS
-  type: select
-  disable-udp: false
-  proxies:
-  - REJECT
-  - "\U0001F4F6test1\U0001F4F6"
-  - "\U0001F4F6test2\U0001F4F6"
 - name: STREAMING
   type: select
   disable-udp: false
