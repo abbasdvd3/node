@@ -1,8 +1,4 @@
-port: 7890
-socks-port: 7891
-redir-port: 7892
-mixed-port: 7893
-tproxy-port: 7895
+
 ipv6: true
 mode: rule
 log-level: silent
@@ -190,8 +186,6 @@ proxy-groups:
 - name: best
   type: url-test
   url: http://hi.bonds.id/ping
-  interval: 300
-  tolerance: 100
   health-check:
   enable: true
   disable-udp: false
@@ -205,8 +199,6 @@ proxy-groups:
 - name: best2
   type: url-test
   url: http://hi.bonds.id/ping
-  interval: 300
-  tolerance: 100
   health-check:
   enable: true
   disable-udp: false
