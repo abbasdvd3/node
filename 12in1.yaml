@@ -363,5 +363,4 @@ rules:
   - DOMAIN-KEYWORD,github,DIRECT,no-resolve,tcp
   - DOMAIN-KEYWORD,appteka.store,DIRECT,no-resolve,tcp
   - DOMAIN-SUFFIX,collector.githubapp.com,DIRECT,no-resolve,tcp
-  - RULE-SET,BlockAds,REJECT,udp
   - MATCH,proxy
