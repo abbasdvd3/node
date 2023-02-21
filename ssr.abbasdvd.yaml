@@ -1,23 +1,8 @@
 allow-lan: true
-mode: Rule
-log-level: info
 external-controller: 0.0.0.0:9090
-dns:
-  enable: true
-  listen: 0.0.0.0:1053
-  fake-ip-range: 198.18.0.1/16
-  enhanced-mode: redir-host
-  nameserver:
-    - 114.114.114.114
-
-tun:
-  enable: true
-  stack: system # or gvisor
-  dns-hijack:
-    - any:53
-  auto-redir: true # or false
-  auto-route: true 
-  auto-detect-interface: true
+log-level: info
+mixed-port: 7890
+mode: Rule
 proxies:
   - {"type":"ssr","name":"1_1","server":"cdnssr.ssrsub.com","port":443,"protocol":"origin","cipher":"aes-256-cfb","obfs":"plain","password":"cdnssr.ssrsub.com","obfs-param":"NUx1WTZMUzVVMU5TNXJPbzVZYU1PbWgwZEhBNkx5OWtiR291ZEdZdmMzTnljM1Zp","protocol-param":"t.me/SSRSUB"}
   - {"type":"ssr","name":"1_2","server":"ssr3.ssrsub.com","port":8333,"protocol":"origin","cipher":"rc4-md5","obfs":"plain","password":"passfw2xs4e!","protocol-param":"t.me/SSRSUB"}
