@@ -1,3 +1,4 @@
+port: 7890
 allow-lan: true
 external-controller: 0.0.0.0:9090
 log-level: info
@@ -3070,9 +3071,8 @@ proxy-groups:
       - '1_77283'
   - name: ♻️ test
     type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 200
-    tolerance: 10
+    url: http://www.google.com.com
+    tolerance: 70
     proxies:
       - '1_1'
       - '1_2'
