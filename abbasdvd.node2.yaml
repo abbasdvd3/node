@@ -60,7 +60,7 @@ proxy-groups:
   - "\U0001F4F6test1\U0001F4F6"
   - "\U0001F4F6test2\U0001F4F6"
   url: http://www.google.com
-    tolerance: 70
+  tolerance: 70
 - name: STREAMING
   type: select
   disable-udp: false
