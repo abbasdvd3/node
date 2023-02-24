@@ -45,7 +45,7 @@ proxy-groups:
 - name: "\U0001F4F6test1\U0001F4F6"
   type: url-test
   disable-udp: false
-  proxies:
+  use:
   - "\U0001F4F6VPN1\U0001F4F6"
   - "\U0001F4F6VPN2\U0001F4F6"
   - "\U0001F4F6VPN4\U0001F4F6"
@@ -55,7 +55,7 @@ proxy-groups:
 - name: "♻️LOADBALANCE♻️"
   type: url-test
   disable-udp: false
-  proxies:
+  use:
   - "\U0001F4F6VPN1\U0001F4F6"
   - "\U0001F4F6VPN2\U0001F4F6"
   - "\U0001F4F6VPN4\U0001F4F6"
