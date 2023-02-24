@@ -1,4 +1,4 @@
-port: 7890
+
 allow-lan: true
 external-controller: 0.0.0.0:9090
 log-level: info
