@@ -38457,7 +38457,8 @@ proxy-groups:
       - ss_5660
       - ss_5661
   - name: BEST-PING
-    type: http://www.google.com
+    type: url-test
+    url: http://www.google.com
     tolerance: 50
     proxies:
       - ss_1
