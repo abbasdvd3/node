@@ -1,18 +1,8 @@
-ipv6: false
+ipv6: true
 mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-unified-delay: true
-dns:
-  enable: true
-  ipv6: false
-  enhanced-mode: redir-host
-  listen: 0.0.0.0:7874
-  nameserver:
-    - 8.8.8.8
-    - 1.0.0.1
-    - https://dns.google/dns-query
 proxies:
   - name: ss_1
     server: 212.102.47.198
@@ -38466,9 +38456,7 @@ proxy-groups:
       - ss_5660
       - ss_5661
   - name: BEST-PING
-    type: url-test
-    url: http://hi.bonds.id/ping
-    interval: 300
+    type: http://google.com
     tolerance: 50
     proxies:
       - ss_1
