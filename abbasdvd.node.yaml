@@ -42,16 +42,6 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 500
 proxy-groups:
-- name: "\U0001F4F6test1\U0001F4F6"
-  type: url-test
-  disable-udp: false
-  use:
-  - "\U0001F4F6VPN1\U0001F4F6"
-  - "\U0001F4F6VPN2\U0001F4F6"
-  - "\U0001F4F6VPN4\U0001F4F6"
-  - "\U0001F4F6VPN3\U0001F4F6"
-  url: http://www.google.com
-  tolerance: '150'
 - name: "♻️LOADBALANCE♻️"
   type: url-test
   disable-udp: false
@@ -66,7 +56,6 @@ proxy-groups:
   disable-udp: false
   proxies:
   - "♻️LOADBALANCE♻️"
-  - "\U0001F4F6test1\U0001F4F6"
 rules:
 - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
 - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
