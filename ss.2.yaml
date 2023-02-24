@@ -1,7 +1,7 @@
 port: 7890
 socks-port: 7891
 ipv6: true
-mode: rulee
+mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
