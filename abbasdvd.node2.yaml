@@ -5,72 +5,67 @@ external-controller: 0.0.0.0:9090
 log-level: debug
 proxies:
 proxy-providers:
-  "\U0001F4F6VPN1\U0001F4F6":
+  VPN1:
     type: http
-    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN1.yaml
-    path: "./proxy_provider/VPN1.yaml"
+    url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN1.yaml"
+    path: proxy_provider/VPN1.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
-  "\U0001F4F6VPN2\U0001F4F6":
+      interval: 200
+  VPN2:
     type: http
-    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN2.yaml
-    path: "./proxy_provider/VPN2.yaml"
+    url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN2.yaml"
+    path: proxy_provider/VPN2.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
-  "\U0001F4F6VPN3\U0001F4F6":
-    type: file
-    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN3.yaml
-    path: "./proxy_provider/VPN3.yaml"
+      interval: 200
+  VPN3:
+    type: http
+    url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN3.yaml"
+    path: proxy_provider/VPN3.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
-  "\U0001F4F6VPN4\U0001F4F6":
-    type: file
-    url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN4.yaml
-    path: "./proxy_provider/VPN4.yaml"
+      interval: 200
+  VPN4:
+    type: http
+    url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN4.yaml"
+    path: proxy_provider/VPN4.yaml
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 500
+      interval: 200
 proxy-groups:
-- name: "\U0001F4F6test1\U0001F4F6"
-  type: url-test
-  disable-udp: false
-  use:
-  - "\U0001F4F6VPN1\U0001F4F6"
-  - "\U0001F4F6VPN3\U0001F4F6"
-  url: http://www.google.com
-- name: "\U0001F4F6test2\U0001F4F6"
-  type: url-test
-  disable-udp: false
-  use:
-  - "\U0001F4F6VPN2\U0001F4F6"
-  - "\U0001F4F6VPN4\U0001F4F6"
-  url: http://www.google.com
-- name: "♻️LOADBALANCE♻️"
-  type: load-balance
-  strategy: round-robin
-  disable-udp: false
-  proxies:
-  - "\U0001F4F6test1\U0001F4F6"
-  - "\U0001F4F6test2\U0001F4F6"
-  url: http://www.google.com
-  tolerance: 70
-- name: STREAMING
+- name: proxy
   type: select
+  health-check:
+  enable: true
   disable-udp: false
   proxies:
-  - "♻️LOADBALANCE♻️"
-  - "\U0001F4F6test1\U0001F4F6"
-  - "\U0001F4F6test2\U0001F4F6"
+  - best
+  - DIRECT
+  use:
+  - VPN1
+  - VPN2
+  - VPN3
+  - VPN4
+- name: best
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 500
+  health-check:
+  enable: true
+  disable-udp: false
+  use:
+  - VPN1
+  - VPN2
+  - VPN3
+  - VPN4
 rules:
 - DST-PORT,7895,REJECT
 - DST-PORT,7892,REJECT
 - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
 - IP-CIDR6,::1/128,REJECT,no-resolve
-- MATCH,STREAMING
+- MATCH,proxy
