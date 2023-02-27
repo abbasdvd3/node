@@ -5,7 +5,7 @@ log-level: info
 external-controller: 0.0.0.0:9090
 proxies: 
 proxy-providers:
-  "\U0001F4F6VPN1\U0001F4F6":
+  VPN1:
     type: http
     target: 'proxy'
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN1.yaml
@@ -14,7 +14,7 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 500
-  "\U0001F4F6VPN2\U0001F4F6":
+  VPN2:
     type: http
     target: 'proxy'
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN2.yaml
@@ -23,7 +23,7 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 500
-  "\U0001F4F6VPN3\U0001F4F6":
+  VPN3:
     type: http
     target: 'proxy'
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN3.yaml
@@ -32,7 +32,7 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 500
-  "\U0001F4F6VPN4\U0001F4F6":
+  VPN4:
     type: http
     target: 'proxy'
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/proxy_providers/VPN4.yaml
@@ -42,21 +42,75 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 500
 proxy-groups:
-- name: "♻️LOADBALANCE♻️"
-  type: url-test
-  disable-udp: false
-  use:
-  - "\U0001F4F6VPN1\U0001F4F6"
-  - "\U0001F4F6VPN2\U0001F4F6"
-  - "\U0001F4F6VPN4\U0001F4F6"
-  - "\U0001F4F6VPN3\U0001F4F6"
-  url: http://www.google.com
-- name: STREAMING
+- name: proxy
   type: select
+  health-check:
+  enable: true
   disable-udp: false
   proxies:
-  - "♻️LOADBALANCE♻️"
+  - best
+  - DIRECT
+  use:
+  - VPN1
+  - VPN2
+  - VPN3
+  - VPN4
+- name: best
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 500
+  health-check:
+  enable: true
+  disable-udp: false
+  use:
+  - VPN1
+  - VPN2
+  - VPN3
+  - VPN4
 rules:
 - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
 - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
-- MATCH,STREAMING
+- IP-CIDR,127.0.0.1/32,REJECT,no-resolve,udp
+- IP-CIDR6,::1/128,REJECT,no-resolve,udp
+# network(tcp/udp) condition for all rules 
+- DOMAIN-SUFFIX,ad.com,REJECT,udp
+- DOMAIN,apple.comscoreresearch.com,DIRECT
+- DOMAIN-SUFFIX,aaplimg.com,DIRECT
+- DOMAIN-SUFFIX,akadns.net,DIRECT
+- DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+- DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
+- DOMAIN-SUFFIX,apple.co,DIRECT
+- DOMAIN-SUFFIX,apple.com,DIRECT
+- DOMAIN-SUFFIX,apple.com.cn,DIRECT
+- DOMAIN-SUFFIX,apple.news,DIRECT
+- DOMAIN-SUFFIX,appstore.com,DIRECT
+- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+- DOMAIN-SUFFIX,crashlytics.com,DIRECT
+- DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com.cn,DIRECT
+- DOMAIN-SUFFIX,itunes.com,DIRECT
+- DOMAIN-SUFFIX,me.com,DIRECT
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT
+- IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,63.92.224.0/19,DIRECT,no-resolve
+- IP-CIDR,65.199.22.0/23,DIRECT,no-resolve
+- IP-CIDR,139.178.128.0/18,DIRECT,no-resolve
+- IP-CIDR,144.178.0.0/19,DIRECT,no-resolve
+- IP-CIDR,144.178.36.0/22,DIRECT,no-resolve
+- IP-CIDR,144.178.48.0/20,DIRECT,no-resolve
+- IP-CIDR,192.35.50.0/24,DIRECT,no-resolve
+- IP-CIDR,198.183.17.0/24,DIRECT,no-resolve
+- IP-CIDR,205.180.175.0/24,DIRECT,no-resolve
+- SRC-IP-CIDR,192.168.1.201/32,DIRECT,tcp
+- DOMAIN-SUFFIX,bilibili.com,DIRECT,tcp
+- DOMAIN-SUFFIX,bilibili.com,REJECT,udp
+- DOMAIN-SUFFIX,github.com,DIRECT,no-resolve,tcp
+- DOMAIN-SUFFIX,github.io,DIRECT,no-resolve,tcp
+- DOMAIN-SUFFIX,githubapp.com,DIRECT,no-resolve,tcp
+- DOMAIN-SUFFIX,githubassets.com,DIRECT,no-resolve,tcp
+- DOMAIN-SUFFIX,githubusercontent.com,DIRECT,no-resolve,tcp
+- DOMAIN-KEYWORD,github,DIRECT,no-resolve,tcp
+- DOMAIN-KEYWORD,appteka.store,DIRECT
+- DOMAIN-SUFFIX,collector.githubapp.com,DIRECT,no-resolve,tcp
+- MATCH,proxy
