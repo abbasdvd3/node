@@ -417,6 +417,37 @@ proxy-groups:
   disable-udp: false
   proxies:
   - "auto"
+  use:
+  - VPN1
+  - VPN2
+  - VPN3
+  - VPN4
+  - VPN5
+  - VPN6
+  - VPN7
+  - VPN9
+  - VPN8
+  - VPN10
+  - VPN11
+  - VPN12
+  - Global
+  - ss
+  - ssr
+  - others
+  - Europe
+  - Oceania
+  - South America
+  - North America
+  - Taiwan
+  - HongKong
+  - China
+  - Pool
+  - Relay
+  - Africa
+  - Asia
+  - Speed
+  - trojan
+  - v2ray
   url: http://www.gstatic.com/generate_204
   interval: '500'
 - name: "auto"
@@ -466,6 +497,19 @@ tunnels:
     target: target.com
     proxy: auto
 rules:
+  - DOMAIN-KEYWORD,facebook,auto
+  - DOMAIN-KEYWORD,fbcdn,auto
+  - DOMAIN-KEYWORD,gmail,DIRECT,tcp
+  - DOMAIN-KEYWORD,instagram,auto
+  - DOMAIN-KEYWORD,porn,auto
+  - DOMAIN-KEYWORD,sci-hub,auto
+  - DOMAIN-KEYWORD,spotify,auto
+  - DOMAIN-KEYWORD,telegram,auto
+  - DOMAIN-KEYWORD,twitter,auto
+  - DOMAIN-KEYWORD,whatsapp,auto
+  - DOMAIN-KEYWORD,youtube,auto
+  - DOMAIN-SUFFIX,google.com,auto
+  - DOMAIN-KEYWORD,google,auto
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve,udp
   - IP-CIDR6,::1/128,REJECT,no-resolve,udp
   # network(tcp/udp) condition for all rules 
