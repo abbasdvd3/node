@@ -11,7 +11,7 @@ allow-lan: true
 external-controller: 0.0.0.0:9090
 secret: ""
 bind-address: "*"
-unified-delay: true
+unified-delay: false
 profile:
   store-selected: true
   store-fake-ip: true
