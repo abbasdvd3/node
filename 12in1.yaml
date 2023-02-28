@@ -6,13 +6,13 @@ auto-redir: true
 ipv6: false
 mode: rule
 log-level: silent
-allow-lan: true
+allow-lan: false
 external-controller: 0.0.0.0:9090
 secret: ""
 bind-address: "*"
 unified-delay: false
 profile:
-  store-selected: true
+  store-selected: false
   store-fake-ip: true
 dns:
   enable: true
