@@ -2931,6 +2931,7 @@ rules:
   - DOMAIN-SUFFIX,jcloudcs.com,🎯 dir
   - DOMAIN-SUFFIX,jd.com,🎯 dir
   - DOMAIN-SUFFIX,jd.hk,🎯 dir
+  - DOMAIN-KEYWORD,appteka.store,🎯 dir,no-resolve
   - DOMAIN-SUFFIX,jdcloud.com,🎯 dir
   - DOMAIN-SUFFIX,jdpay.com,🎯 dir
   - DOMAIN-SUFFIX,paipai.com,🎯 dir
