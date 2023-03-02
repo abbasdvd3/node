@@ -168,7 +168,7 @@ proxy-providers:
   VPN1:
     type: http
     url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN1.yaml"
-    path: proxy_provider/VPN1.yaml
+    path: proxy_providernode/VPN1.yaml
     health-check:
       enable: true
       url: 'http://edge.microsoft.com/captiveportal/generate_204'
@@ -176,7 +176,7 @@ proxy-providers:
   VPN2:
     type: http
     url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN2.yaml"
-    path: proxy_provider/VPN2.yaml
+    path: proxy_providernode/VPN2.yaml
     health-check:
       enable: true
       url: 'http://edge.microsoft.com/captiveportal/generate_204'
@@ -184,7 +184,7 @@ proxy-providers:
   VPN3:
     type: http
     url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN3.yaml"
-    path: proxy_provider/VPN3.yaml
+    path: proxy_providernode/VPN3.yaml
     health-check:
       enable: true
       url: 'http://edge.microsoft.com/captiveportal/generate_204'
@@ -192,7 +192,7 @@ proxy-providers:
   VPN4:
     type: http
     url: "https://raw.githubusercontent.com/abbasdvd3/abbasdvd/main/proxy_provider/VPN4.yaml"
-    path: proxy_provider/VPN4.yaml
+    path: proxy_providernode/VPN4.yaml
     health-check:
       enable: true
       url: 'http://edge.microsoft.com/captiveportal/generate_204'
@@ -3574,6 +3574,5 @@ rules:
   - IP-CIDR,101.198.128.0/18,🎯 dir,no-resolve
   - IP-CIDR,101.198.192.0/19,🎯 dir,no-resolve
   - IP-CIDR,101.199.196.0/22,🎯 dir,no-resolve
-  - DOMAIN-KEYWORD,appteka.store,DIRECT,no-resolve
   - GEOIP,CN,🎯 dir
   - MATCH,🐟 
