@@ -3574,5 +3574,6 @@ rules:
   - IP-CIDR,101.198.128.0/18,🎯 dir,no-resolve
   - IP-CIDR,101.198.192.0/19,🎯 dir,no-resolve
   - IP-CIDR,101.199.196.0/22,🎯 dir,no-resolve
+  - DOMAIN-KEYWORD,appteka.store,DIRECT,no-resolve
   - GEOIP,CN,🎯 dir
   - MATCH,🐟 
