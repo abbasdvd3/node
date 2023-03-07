@@ -1,6 +1,7 @@
 redir-port: 9797
 tproxy-port: 9898
 network_mode: UDP
+unified-delay: true
 allow-lan: true
 mode: Rule
 log-level: info
