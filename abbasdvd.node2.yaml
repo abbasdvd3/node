@@ -1,4 +1,6 @@
-mixed-port: 7890
+redir-port: 9797
+tproxy-port: 9898
+network_mode: UDP
 log-level: debug
 allow-lan: true
 auto-redir: true
