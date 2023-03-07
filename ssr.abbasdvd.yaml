@@ -1,4 +1,6 @@
-
+redir-port: 9797
+tproxy-port: 9898
+network_mode: UDP
 allow-lan: true
 external-controller: 0.0.0.0:9090
 log-level: info
