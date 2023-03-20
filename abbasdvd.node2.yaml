@@ -26,7 +26,7 @@ sniffer:
     - 443
     - 8000-9000
 tun:
-  enable: true
+  enable: false
   stack: system
   dns-hijack:
     - 198.18.0.2:53
@@ -44,16 +44,7 @@ dns:
   nameserver:
     - 114.114.114.114
     - 8.8.8.8
-    - tls://223.5.5.5:853
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query#h3=true
-    - https://mozilla.cloudflare-dns.com/dns-query#DNS&h3=true
-    - dhcp://en0
-    - quic://dns.adguard.com:784
   fallback:
-    - https://doh.dns.sb/dns-query
-    - tcp://208.67.222.222:443
-    - quic://a.passcloud.xyz:784
     - tls://8.8.4.4:853#DNSg
   fallback-filter:
     geoip: false
@@ -84,15 +75,14 @@ proxy-groups:
   - VPN3
   - VPN4
   url: 'http://edge.microsoft.com/captiveportal/generate_204'
-  interval: 300
+  interval: 500
   tolerance: 150       
   lazy: true
   disable-udp: true  
 - name: auto
   type: url-test
   url: 'http://edge.microsoft.com/captiveportal/generate_204'
-  interval: 300
-  tolerance: 50
+  interval: 400
   use:
   - VPN1
   - VPN2
@@ -199,15 +189,6 @@ proxy-providers:
       enable: true
       url: 'http://edge.microsoft.com/captiveportal/generate_204'
       interval: 200
-tunnels:
-  - tcp/udp,127.0.0.1:6553,114.114.114.114:53,auto
-  - tcp,127.0.0.1:6666,rds.mysql.com:3306,auto
-  - network:
-      - tcp
-      - udp
-    address: 127.0.0.1:7777
-    target: target.com
-    proxy: auto
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 dir
   - DOMAIN-SUFFIX,ip6-localhost,🎯 dir
@@ -3576,5 +3557,4 @@ rules:
   - IP-CIDR,101.198.128.0/18,🎯 dir,no-resolve
   - IP-CIDR,101.198.192.0/19,🎯 dir,no-resolve
   - IP-CIDR,101.199.196.0/22,🎯 dir,no-resolve
-  - GEOIP,CN,🎯 dir
   - MATCH,🐟 
