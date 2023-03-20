@@ -5,12 +5,8 @@ log-level: debug
 allow-lan: true
 auto-redir: true
 ipv6: false
-external-controller: 127.0.0.1:9090
-tcp-concurrent: true
-interface-name: null
-profile:
-  store-selected: false
-  store-fake-ip: true
+external-controller: 0.0.0.0:9090
+
 sniffer:
   enable: true
   sniffing:
