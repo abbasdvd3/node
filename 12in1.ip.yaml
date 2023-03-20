@@ -1,10 +1,58 @@
+port: 7892
+socks-port: 7891
 mixed-port: 7890
-ipv6: true
-mode: rule
-log-level: silent
+tproxy-port: 7895
 allow-lan: true
+geodata-mode: true
+unified-delay: false
+mode: rule
+log-level: info
+ipv6: true
 external-controller: 0.0.0.0:9090
-
+udp: true
+tcp-concurrent: true
+enable-process: true
+hosts:
+  'tls.loc': 127.0.0.1
+  '+.clash.meta': 127.0.0.1
+  'ota.googlezip.net': 127.0.0.1
+  'ota-cache1.googlezip.net': 127.0.0.1
+  'ota-cache2.googlezip.net': 127.0.0.1
+profile:
+  store-selected: false
+  store-fake-ip: true
+  experimental:
+   sniff-tls-sni: true
+   udp-fallback-match: true
+  # fingerprint: ""  
+sniffer:
+  enable: true
+  sniffing:
+    - tls
+    - http
+tun:
+  stack: gvisor
+  dns-hijack:
+    - 198.18.0.2:53
+  auto-route: false
+  auto-detect-interface: false
+  enable: true 
+dns:
+  enable: true
+  ipv6: false
+  prefer-h3: false
+  default-nameserver:
+    - '1.1.1.1'
+  listen: 0.0.0.0:1053
+  use-hosts: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 'tcp://1.0.0.1'
+    - 'tcp://8.8.4.4'
+  fallback:
+    - 'https://1.1.1.1/dns-query'
+    - 'https://8.8.8.8/dns-query'
 proxies:
 
 proxy-providers:
@@ -16,7 +64,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN2:
     type: http
     behavior: proxy
@@ -25,7 +73,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN3:
     type: http
     behavior: proxy
@@ -34,7 +82,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN4:
     type: http
     behavior: proxy
@@ -43,7 +91,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN5:
     type: http
     behavior: proxy
@@ -52,7 +100,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN6:
     type: http
     behavior: proxy
@@ -61,7 +109,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN7:
     type: http
     behavior: proxy
@@ -70,7 +118,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN8:
     type: http
     behavior: proxy
@@ -79,7 +127,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN9:
     type: http
     behavior: proxy
@@ -88,7 +136,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN10:
     type: http
     behavior: proxy
@@ -97,7 +145,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN11:
     type: http
     behavior: proxy
@@ -106,7 +154,7 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   VPN12:
     type: http
     behavior: proxy
@@ -115,15 +163,15 @@ proxy-providers:
     health-check:
       enable: true
       url: http://cp.cloudflare.com/generate_204
-      interval: 200
+      interval: 1200
   China:
     type: http
     url: https://raw.githubusercontent.com/abbasdvd3/node/main/providers/free.iam7.tk/provider-China.yaml
     path: free.iam7.tk/provider-China.yaml
-    interval: 500
+    interval: 1500
     health-check:
       enable: true
-      interval: 300
+      interval: 1300
       url: http://www.gstatic.com/generate_204
   HongKong:
     type: http
@@ -132,7 +180,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   Taiwan:
     type: http
@@ -141,7 +189,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204 
   Speed:
     type: http
@@ -150,7 +198,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204      
   Relay:
     type: http
@@ -159,7 +207,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   Pool:
     type: http
@@ -168,7 +216,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204 
   ss:
     type: http
@@ -177,7 +225,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   ssr:
     type: http
@@ -186,7 +234,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   v2ray:
     type: http
@@ -195,7 +243,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204 
   trojan:
     type: http
@@ -204,7 +252,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204      
   Asia:
     type: http
@@ -213,7 +261,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204 
   North America:
     type: http
@@ -222,7 +270,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204      
   South America:
     type: http
@@ -231,7 +279,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   Oceania:
     type: http
@@ -240,7 +288,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   Europe:
     type: http
@@ -249,7 +297,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   Africa:
     type: http
@@ -258,7 +306,7 @@ proxy-providers:
     interval: 3600
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   others:
     type: http
@@ -267,7 +315,7 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204
   Global:
     type: http
@@ -276,13 +324,13 @@ proxy-providers:
     interval: 500
     health-check:
       enable: true
-      interval: 120
+      interval: 1200
       url: http://www.gstatic.com/generate_204   
 proxy-groups:
 - name: "auto"
   type: url-test
   url: http://hi.bonds.id/ping
-  interval: 500
+  interval: 1200
   health-check:
   enable: true
   disable-udp: false
