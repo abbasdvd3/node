@@ -1,7 +1,0 @@
-proxies:
-- {"name":"Relay_🇨🇳 CN-🇹🇼TW_178","server":"14.29.124.168","type":"ss","country":"🇨🇳 CN","port":24007,"password":"QazEdcTgb159@$*","cipher":"aes-128-cfb"}
-- {"name":"Relay_🇨🇳CN-🇹🇼TW_199","server":"14.29.124.168","type":"ss","country":"🇨🇳CN","port":24002,"password":"QazEdcTgb159@$*","cipher":"aes-128-cfb"}
-- {"name":"Relay_🇹🇼TW-🇹🇼TW_741","server":"aabic.eniey.com","type":"ss","country":"🇹🇼TW","port":805,"password":"G!yBwPWH3Vao","cipher":"chacha20-ietf-poly1305"}
-- {"name":"Relay_🇹🇼TW-🇹🇼TW_742","server":"aabic.eniey.com","type":"ss","country":"🇹🇼TW","port":804,"password":"G!yBwPWH3Vao","cipher":"chacha20-ietf-poly1305"}
-- {"name":"🇹🇼TW_743","server":"103.137.63.118","type":"ss","country":"🇹🇼TW","port":804,"password":"G!yBwPWH3Vao","cipher":"chacha20-ietf-poly1305"}
-- {"name":"Relay_🇹🇼TW-🇹🇼TW_744","server":"hinet1261.gfwisbest.xyz","type":"vmess","country":"🇹🇼TW","port":224,"uuid":"2285133e-b9ba-3fb5-a246-9c7ddcc2cd7a","alterId":0,"cipher":"auto","network":"tcp","ws-path":"/","http-opts":{},"h2-opts":{},"skip-cert-verify":true}
