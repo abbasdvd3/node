@@ -1,16 +1,12 @@
 mixed-port: 7890
 log-level: debug
 allow-lan: true
+mode: rule
 auto-redir: true
 ipv6: false
-external-controller: 127.0.0.1:9090
-tcp-concurrent: true
-geodata-mode: false
+external-controller: 0.0.0.0:9090
 enable-process: true
-interface-name: null
-profile:
-  store-selected: false
-  store-fake-ip: true
+
 sniffer:
   enable: true
   sniffing:
