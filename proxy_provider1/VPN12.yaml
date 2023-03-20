@@ -1,9 +1,0 @@
-proxies:
-  - {"name":"@abbasdvd10✌🤘_765\r","type":"trojan","server":"ap.liangyuandian.top","port":443,"udp":true,"password":"b341f309-7e2b-45c4-a316-9e23037e3711","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"@abbasdvd10✌🤘_781\r","type":"trojan","server":"hk04.trojanyyds.xyz","port":443,"udp":true,"password":"a6bebbb9-c6bc-42af-9ea2-434a2164a978","sni":"hk04.trojanyyds.xyz","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"@abbasdvd10✌🤘_829\r","type":"trojan","server":"5.44.249.51","port":3389,"udp":true,"password":"182228812d1e0f23","sni":"5.44.249.51","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"@abbasdvd10✌🤘_868\r","type":"trojan","server":"jp.mjt001.com","port":443,"udp":true,"password":"459d23f4-dcfd-4fef-9ba3-ef0ad10fc336","sni":"jp.mjt001.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"@abbasdvd10✌🤘_879\r","type":"trojan","server":"60.249.3.231","port":3306,"udp":true,"password":"0c6a3341e8d5ab17","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"@abbasdvd10✌🤘_882\r","type":"trojan","server":"60.249.3.231","port":3389,"udp":true,"password":"182228812d1e0f23","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"@abbasdvd10✌🤘_888\r","type":"trojan","server":"hk02.trojanyyds.xyz","port":443,"udp":true,"password":"a6bebbb9-c6bc-42af-9ea2-434a2164a978","sni":"hk02.trojanyyds.xyz","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"@abbasdvd10✌🤘_905","type":"trojan","server":"51.81.82.15","port":443,"udp":true,"password":"c2b0a060-44b0-11ed-ad2e-1239d0255272","skip-cert-verify":true,"network":"tcp"}

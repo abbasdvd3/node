@@ -1,7 +1,0 @@
-proxies:
-  - {"name":"abbasdvd.2023_420\r","type":"ss","server":"135.125.244.103","port":989,"password":"f8f7aCzcPKbsF8p3","cipher":"aes-256-cfb"}
-  - {"name":"abbasdvd.2023_1117","type":"vmess","server":"00000000000000000000000000000000000000000000000000000000000037a.node-for-bigairport.win","port":12356,"cipher":"auto","uuid":"78065c14-fc80-40b5-a46c-0e34efdf82fa","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"abbasdvd.2023_1122","type":"vmess","server":"00000000000000000000000000000000000000000000000000000000000032a.node-for-bigairport.win","port":12356,"cipher":"auto","uuid":"2100274e-55ae-4686-a380-a66ae8b0ef1b","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"abbasdvd.2023_1160","type":"vmess","server":"18.143.123.35","port":80,"cipher":"auto","uuid":"68df4838-46d0-4b5b-c3f0-a40ec7063245","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/"}}
-  - {"name":"vpn9_4641\r","type":"ss","server":"134.195.196.231","port":4444,"password":"pKEW8JPByTVTLtM","cipher":"aes-256-gcm"}
-  - {"name":"vpn9_4642","type":"ss","server":"134.195.196.231","port":9101,"password":"e4FCWrgpkji3QY","cipher":"aes-256-gcm"}
