@@ -28,7 +28,7 @@ sniffer:
     - 443
     - 8000-9000
 tun:
-  enable: true
+  enable: false
   stack: system
   dns-hijack:
     - 198.18.0.2:53
@@ -46,28 +46,6 @@ dns:
   nameserver:
     - 114.114.114.114
     - 8.8.8.8
-    - tls://223.5.5.5:853
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query#h3=true
-    - https://mozilla.cloudflare-dns.com/dns-query#DNS&h3=true
-    - dhcp://en0
-    - quic://dns.adguard.com:784
-  fallback:
-    - https://doh.dns.sb/dns-query
-    - tcp://208.67.222.222:443
-    - quic://a.passcloud.xyz:784
-    - tls://8.8.4.4:853#DNSg
-  fallback-filter:
-    geoip: false
-    geoip-code: CN
-    geosite:
-      - gfw
-    ipcidr:
-      - 240.0.0.0/4
-    domain:
-      - +.google.com
-      - +.facebook.com
-      - +.youtube.com
   default-nameserver:
     - 114.114.114.114
     - 8.8.8.8
@@ -423,29 +401,7 @@ proxy-groups:
   - Speed
   - trojan
   - v2ray
-tunnels:
-  - tcp/udp,127.0.0.1:6553,114.114.114.114:53,auto
-  - tcp,127.0.0.1:6666,rds.mysql.com:3306,auto
-  - network:
-      - tcp
-      - udp
-    address: 127.0.0.1:7777
-    target: target.com
-    proxy: auto
 rules:
-  - DOMAIN-KEYWORD,facebook,auto
-  - DOMAIN-KEYWORD,fbcdn,auto
-  - DOMAIN-KEYWORD,gmail,DIRECT,tcp
-  - DOMAIN-KEYWORD,instagram,auto,tcp
-  - DOMAIN-KEYWORD,porn,auto
-  - DOMAIN-KEYWORD,sci-hub,auto
-  - DOMAIN-KEYWORD,spotify,auto
-  - DOMAIN-KEYWORD,telegram,auto, tcp
-  - DOMAIN-KEYWORD,twitter,auto
-  - DOMAIN-KEYWORD,whatsapp,auto
-  - DOMAIN-KEYWORD,youtube,auto
-  - DOMAIN-SUFFIX,google.com,auto
-  - DOMAIN-KEYWORD,google,auto
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve,udp
   - IP-CIDR6,::1/128,REJECT,no-resolve,udp
   # network(tcp/udp) condition for all rules 
