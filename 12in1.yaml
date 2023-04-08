@@ -1,4 +1,4 @@
-mixed-port: 7890
+tproxy-port: 7895
 log-level: debug
 allow-lan: true
 mode: rule
@@ -17,9 +17,7 @@ sniffer:
     - dlg.io.mi.com
     - +.apple.com
   force-domain:
-    - google.com
-    - instagram.com
-    - telegram.com
+
   port-whitelist:
     - 443
     - 8000-9000
@@ -397,7 +395,22 @@ proxy-groups:
   - Speed
   - trojan
   - v2ray
+rule-providers:
+  porn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/main/rule_provider/porn.yaml"
+    path: "./rule_provider/porn.yaml"
+    interval: 86400 
+  telegram+Whatsapp:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/abbasdvd3/clash/main/rule_provider/telegram%2BWhatsapp.yaml"
+    path: "./rule_provider/telegram+Whatsapp.yaml"
+    interval: 86400      
 rules:
+  - RULE-SET,porn,auto,tcp
+  - RULE-SET,telegram+Whatsapp,auto
   - IP-CIDR,127.0.0.1/32,REJECT,no-resolve,udp
   - IP-CIDR6,::1/128,REJECT,no-resolve,udp
   # network(tcp/udp) condition for all rules 
@@ -413,4 +426,4 @@ rules:
   - DOMAIN-KEYWORD,github,DIRECT,no-resolve,tcp
   - DOMAIN-KEYWORD,appteka.store,DIRECT,no-resolve,tcp
   - DOMAIN-SUFFIX,collector.githubapp.com,DIRECT,no-resolve,tcp
-  - MATCH,proxy
+  - MATCH,auto
